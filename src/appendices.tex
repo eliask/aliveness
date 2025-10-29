@@ -1,0 +1,129 @@
+% Aliveness: Appendices Only
+% Elias Kunnas, 2025
+% Standalone compilation of all appendices
+
+\input{preamble}
+
+\begin{document}
+
+% ============================================================================
+% FRONT MATTER
+% ============================================================================
+\frontmatter
+
+% Title page
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Huge\bfseries Aliveness\par}
+\vspace{0.5cm}
+{\LARGE Principles of Telic Systems\par}
+\vspace{1cm}
+{\huge\textbf{Appendices}\par}
+\vspace{2cm}
+{\Large Elias Kunnas\par}
+\vspace{1cm}
+{\large October 2025\par}
+
+\vfill
+
+{\small This document contains only the appendices.\par}
+{\small For the full book, see the main volume.\par}
+
+\end{titlepage}
+
+% Define acronyms for references
+\acrodef{SORT}{Sovereignty-Organization-Reality-Telos Framework}
+\acrodef{pSORT}{Personal SORT (individual-level application)}
+\acrodef{tSORT}{Tribal SORT (sub-civilizational groups)}
+\acrodef{SORTVC}{SORT plus Vitality and Constraint modifiers}
+\acrodef{POSIWID}{Purpose Of a System Is What It Does}
+\acrodef{IFHS}{Integrity, Fecundity, Harmony, Synergy (The Four Foundational Virtues)}
+
+% Table of Contents
+\tableofcontents
+\cleardoublepage
+
+% ============================================================================
+% APPENDICES
+% ============================================================================
+\mainmatter
+
+% Don't use \appendix command - configure manually for better control
+% Reset counters for appendices
+\setcounter{part}{0}
+\setcounter{chapter}{0}  % Reset to 0, will become 1 with first \chapter
+\renewcommand{\thepart}{\Alph{part}}  % Use letters for part numbers
+
+% Configure appendix numbering: Parts are A/B/C, Appendices are A/B/C...
+% Appendices use \subsection directly under \chapter, so format as A.1, A.2, B.1, B.2, etc.
+\renewcommand{\thechapter}{\Alph{chapter}}  % Appendices numbered A, B, C...
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thechapter.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% Mark that we're in appendix mode for TOC
+\renewcommand{\appendixname}{Appendix}
+\renewcommand{\chaptername}{Appendix}
+
+% Configure cleveref to call chapters "Appendix" in the appendix section
+\crefname{chapter}{Appendix}{Appendices}
+
+% ============================================================================
+% PART A: THE CANONICAL REFERENCE (The Fortress of Gnosis)
+% ============================================================================
+\part{The Canonical Reference}
+\label{part:canonical-reference}
+\markboth{Part A: The Canonical Reference}{Part A: The Canonical Reference}
+
+\vspace{-2em}  % Reduce space after part title
+\noindent\textit{Core reference material establishing the framework's canonical definitions, empirical foundations, and falsification criteria. The fortress of Gnostic clarity.}
+\vspace{1em}
+
+\input{appendix_a_lexicon}
+\input{appendix_b_scoring_rubrics}
+\input{appendix_c_falsification_protocols}
+\input{appendix_d_methodology}
+\input{appendix_e_case_studies}
+
+% ============================================================================
+% PART B: THE APPLIED PRAXIS (The Armory)
+% ============================================================================
+\part{The Applied Praxis}
+\label{part:applied-praxis}
+\markboth{Part B: The Applied Praxis}{Part B: The Applied Praxis}
+
+\vspace{-2em}
+\noindent\textit{Tactical and engineering manuals for implementing the framework in the real world. The armory of actionable tools.}
+\vspace{1em}
+
+\input{appendix_f_axiological_warfare}
+\input{appendix_g_american_refounding}
+
+% ============================================================================
+% PART C: THE RESEARCH FRONTIER (The Laboratory)
+% ============================================================================
+\part{The Research Frontier}
+\label{part:research-frontier}
+\markboth{Part C: The Research Frontier}{Part C: The Research Frontier}
+
+\vspace{-2em}
+\noindent\textit{Speculative extensions, ongoing synthesis, and future research directions. The laboratory of conscious becoming.}
+\vspace{1em}
+
+\input{appendix_h_generative_medicine}
+\input{appendix_i_influences}
+\input{appendix_j_research_program}
+\input{appendix_k_ai_alignment}
+\input{appendix_l_psychological_frameworks}
+\input{appendix_m_gnostic_bestiary}
+
+% ============================================================================
+% INDEX
+% ============================================================================
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\end{document}

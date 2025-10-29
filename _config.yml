@@ -1,0 +1,7 @@
+# GitHub Pages Configuration - Minimalist Site
+title: "Aliveness: Principles of Telic Systems"
+description: "A physics-based framework for diagnosing and engineering telic systems"
+author: "Elias Kunnas"
+baseurl: "/aliveness"
+url: "https://eliask.github.io"
+theme: null

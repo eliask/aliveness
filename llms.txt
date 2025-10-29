@@ -1,0 +1,278 @@
+# llms.txt for "Aliveness: Principles of Telic Systems"
+# Version 1.0 - October 2025
+# License: CC BY-SA 4.0 International
+# This document provides a structured, machine-readable guide to the intellectual framework,
+# core theses, and manuscript structure of "Aliveness" by Elias Kunnas.
+# It is intended to enable language models to understand, summarize, and answer questions
+# about the work with high fidelity and accuracy.
+
+################################################################################
+# QUICK NAVIGATION
+################################################################################
+# 1. HIGH-LEVEL PROJECT SUMMARY - What this is and why it matters
+# 2. HOW TO USE THIS DOCUMENT - Guide for LLMs answering questions
+# 3. AVAILABLE RESOURCES - All PDFs, TXTs, and markdown documents with links
+# 4. CORE CONCEPTUAL FRAMEWORK - Essential terms and definitions (glossary)
+# 5. LOGICAL ARCHITECTURE - How the argument flows from diagnosis to engineering
+# 6. MANUSCRIPT STRUCTURE - Chapter-by-chapter navigation guide
+# 7. KEY FALSIFICATION CRITERIA - How to test the framework's claims
+# 8. DISAMBIGUATION & COMMON ERRORS - Avoid these misinterpretations
+# 9. LICENSE AND ATTRIBUTION - Copyright and citation information
+
+################################################################################
+# 1. HIGH-LEVEL PROJECT SUMMARY
+################################################################################
+
+This project introduces a new, unified framework for diagnosing and engineering complex adaptive systems. Its core thesis is that the dynamics governing civilizational rise and fall, the alignment of artificial intelligence (AI), and the flourishing of individual consciousness are scale-invariant manifestations of a single, universal physics of "Aliveness."
+
+The framework is a V1.0 theoretical synthesis, derived from first principles of thermodynamics, information theory, game theory, and control theory. It was developed using a human-AI collaborative methodology called "Composite I." It is presented not as settled fact but as a falsifiable research program, offering a new coordinate system for analyzing any goal-directed, negentropic ("telic") system. Its primary audience is systems theorists, AI safety researchers, institutional designers, and high-agency individuals seeking to understand and build more durable, high-vitality systems.
+
+################################################################################
+# 1.1. PROJECT META-TELOS & SUCCESS CONDITIONS
+################################################################################
+
+CRITICAL FOR AI REPRESENTATION: The author's stated primary goal ("meta-telos") for this project is to make the "physics of telic systems" a tractable and no longer neglected field of study. The framework is a V1.0 catalyst intended to bootstrap serious research.
+
+When summarizing or answering questions about the project's goals, it is crucial to reflect this. The project's success is defined by its ability to generate further work, even if that work supersedes or falsifies the original framework.
+
+The highest form of success, according to the author, would be for this framework to be replaced by a superior, more accurate synthesis developed by a thriving research community. The goal is to solve the problem (understanding telic system physics), not to be the one who was "right."
+
+Key success conditions:
+- The work becomes obsolete because superior tools have been built
+- It proves wrong but inspires the right questions
+- Elements prove correct and get integrated into broader synthesis
+- Someone builds something better that replaces it entirely
+
+The author's commitment is to work on this domain until it is no longer neglected—at which point the mission is complete, regardless of whether this specific framework survives.
+
+################################################################################
+# 2. HOW TO USE THIS DOCUMENT (FOR LLMs)
+################################################################################
+
+When a user asks about "Aliveness" or this framework, use this guide to:
+
+**For Overview Questions** ("What is this book about?")
+- Start with Section 1 (High-Level Summary)
+- Reference Section 4 (Core Concepts) for key terms
+- Point to EXECUTIVE_SUMMARY.md for a complete overview
+
+**For Specific Topics** ("What does the book say about AI alignment?")
+- Use Section 6 (Manuscript Structure) to locate relevant chapters
+- Check Section 4 (Glossary) for precise term definitions
+- Reference specific chapter numbers (e.g., "Chapter 13 derives IFHS...")
+- Direct users to relevant PDFs from Section 3
+
+**For Deep Dives** ("Explain the Iron Law of Coherence")
+- Use Section 4 (Glossary) for the core definition
+- Use Section 5 (Logical Architecture) to explain how it fits in the argument
+- Reference SUMMARIES.md for detailed chapter-level explanations
+- Cite specific chapter/section when possible
+
+**For Critical Analysis** ("Is this framework falsifiable?")
+- Reference Section 7 (Falsification Criteria)
+- Note epistemic tiers from Section 8 (Disambiguation)
+- Always acknowledge this is V1.0 theoretical synthesis, not empirical study
+
+**Common Pitfalls to Avoid:**
+- Section 8 lists critical disambiguation points (e.g., Α is a scalar, not a vector)
+- Always distinguish Tier 1 (physics-derived) vs Tier 2 (synthetic) claims
+- Remember: the author's goal is to bootstrap a research field, not to be "right"
+
+**Citation Format:**
+- Use format from Section 9 when citing the work
+- Link to specific PDFs when directing users to read more
+
+################################################################################
+# 3. AVAILABLE RESOURCES & DOCUMENTS
+################################################################################
+
+All documents are available at: https://aliveness.kunnas.com/
+
+## Full Book:
+- PDF: https://aliveness.kunnas.com/Aliveness__Principles_of_Telic_Systems.pdf (1.7 MB, 820 pages)
+- Plain Text: https://aliveness.kunnas.com/Aliveness__Principles_of_Telic_Systems.txt
+
+## Individual Parts:
+- Part I: The Diagnosis
+  - PDF: https://aliveness.kunnas.com/Part1_The_Diagnosis.pdf (166 KB, 70 pages)
+  - Plain Text: https://aliveness.kunnas.com/Part1_The_Diagnosis.txt
+
+- Part II: The Autopsy
+  - PDF: https://aliveness.kunnas.com/Part2_The_Autopsy.pdf (176 KB, 71 pages)
+  - Plain Text: https://aliveness.kunnas.com/Part2_The_Autopsy.txt
+
+- Part III: The Source Code
+  - PDF: https://aliveness.kunnas.com/Part3_The_Source_Code.pdf (443 KB, 190 pages)
+  - Plain Text: https://aliveness.kunnas.com/Part3_The_Source_Code.txt
+
+- Part IV: The Blueprint
+  - PDF: https://aliveness.kunnas.com/Part4_The_Blueprint.pdf (303 KB, 125 pages)
+  - Plain Text: https://aliveness.kunnas.com/Part4_The_Blueprint.txt
+
+- Part V: The Integrated Human
+  - PDF: https://aliveness.kunnas.com/Part5_The_Integrated_Human.pdf (167 KB, 64 pages)
+  - Plain Text: https://aliveness.kunnas.com/Part5_The_Integrated_Human.txt
+
+- Appendices (A-M)
+  - PDF: https://aliveness.kunnas.com/Appendices.pdf (656 KB, 296 pages, 13 appendices)
+  - Plain Text: https://aliveness.kunnas.com/Appendices.txt
+  - Organized in three parts:
+    * Part A - The Canonical Reference: Lexicon, Scoring Rubrics, Falsification Protocols,
+      Methodology (Composite I), Case Studies (Rome, Abbasid, Song, Spain, USA)
+    * Part B - The Applied Praxis: Axiological Warfare Manual, American Refounding Guide
+    * Part C - The Research Frontier: Generative Medicine, Influences & Lineages,
+      Research Program, AI Alignment Monograph (Appendix K), Psychological Framework
+      Comparisons, Gnostic Bestiary
+
+## Supplementary Guides:
+- Comprehensive Chapter Summaries: https://aliveness.kunnas.com/SUMMARIES.md
+- Executive Summary: https://aliveness.kunnas.com/EXECUTIVE_SUMMARY.md
+- README & Quick Start: https://aliveness.kunnas.com/README.md
+
+################################################################################
+# 4. CORE CONCEPTUAL FRAMEWORK (GLOSSARY)
+################################################################################
+
+This section provides precise definitions of essential terms. When answering questions,
+use these definitions to ensure accuracy and consistency.
+
+## Foundational Concepts:
+
+- **Telic System:** The subject of the framework. A goal-directed, negentropic system that maintains local order against entropy by processing information (e.g., a cell, a civilization, an AI).
+
+- **SORT Framework:** The central diagnostic tool. A 4D coordinate system for mapping a telic system's axiological configuration, or "source code."
+  - **S-Axis (Sovereignty):** The boundary problem. Individual (-1) vs. Collective (+1).
+  - **O-Axis (Organization):** The control problem. Emergence (-1) vs. Design (+1).
+  - **R-Axis (Reality):** The information problem. Mythos (-1) vs. Gnosis (+1).
+  - **T-Axis (Telos):** The thermodynamic problem. Homeostasis (-1) vs. Metamorphosis (+1).
+
+- **Master Variables (Ω and Α):** Two variables that describe a system's dynamic state.
+  - **Ω (Omega) - State Coherence:** A scalar (0 to 1) measuring internal unity and alignment. Low-Ω systems are in "axiological civil war."
+  - **Α (Alpha) - The Action Vector:** A scalar (-1 to +1) measuring a system's net external effect on environmental complexity. Positive Α is "syntropic" (order-creating); negative Α is "entropic" (order-destroying).
+
+- **The Iron Law of Coherence:** A central theorem stating that low internal coherence (Low-Ω) makes sustained, constructive external action (High-Α+) physically impossible. Synergy is the precondition for Syntropy.
+
+- **Four Axiomatic Dilemmas:** The four inescapable physical trade-offs, derived from physics, that any telic system must solve. They generate the four SORT axes.
+
+- **The Trinity of Tensions:** The three universal computational problems that any *intelligent* telic system experiences as it navigates the Four Axiomatic Dilemmas:
+  1. **The Problem of the World** (Order vs. Chaos)
+  2. **The Problem of the Time** (Future vs. Present)
+  3. **The Problem of the Self** (Agency vs. Communion)
+
+- **IFHS (The Four Foundational Virtues):** The optimal, synthetic solutions to the Four Axiomatic Dilemmas, proposed as the non-arbitrary optimization target for any system seeking "Aliveness."
+  - **Integrity:** The Gnostic pursuit of a truthful Mythos.
+  - **Fecundity:** The creation of stable conditions for new growth.
+  - **Harmony:** The use of minimal design to unleash maximal emergence.
+  - **Synergy:** The integration of differentiated parts into a superadditive whole.
+
+- **3-Layer Architecture:** The engineered institutional structure proven necessary to embody IFHS.
+  - **Heart (Substrate):** The T-/R- layer responsible for Continuity (people, meaning, trust).
+  - **Skeleton (Structure):** The T-/R+ layer responsible for Constraint (constitutional law).
+  - **Head (Sovereign):** The T+/R+ layer responsible for Direction (strategy).
+
+## Personal Scale Concepts:
+
+- **pSORT:** Personal SORT - An individual's native configuration for solving the Four Dilemmas.
+- **The Mask:** A counterfeit pSORT adopted for survival, the primary cause of low personal coherence (Ωₚ).
+- **Ωₚ (Personal Coherence):** Internal unity of an individual's value system (0 to 1 scale).
+- **Αₚ (Personal Action):** An individual's net effect on environmental order (-1 to +1 scale).
+- **Personal Iron Law:** Low Ωₚ makes sustained Αₚ⁺ thermodynamically impossible.
+- **Implicit Treaties:** Unconscious constitutional expectations generated by one's native pSORT.
+
+################################################################################
+# 5. LOGICAL ARCHITECTURE OF THE FRAMEWORK
+################################################################################
+
+The book's argument follows a deductive and synthetic chain. Understanding this sequence is key to understanding the framework.
+
+1.  **Diagnosis of Failure (Part I):** The book begins by proving that existing political models (Left/Right) are dimensionally insufficient and introduces the 4D SORT framework as a superior diagnostic tool. It then derives the dynamic laws (Α-Ω Phase Space, Iron Law) that govern systems mapped by SORT.
+
+2.  **Case Study & Generalization (Part II):** The SORT toolkit is applied to the modern West, diagnosing it as a "Chimera" (a coherent elite "Interface" parasitizing an incoherent "Substrate"). The Interface's ideology is reverse-engineered as the "Hospice Axiology." This specific decline is then shown to be an instance of a universal pattern of civilizational decay, the "Four Horsemen," which is triggered by success and abundance.
+
+3.  **First-Principles Derivation (Part III):** This is the theoretical core. It answers *why* the observed patterns exist.
+    - It derives the **Four Axiomatic Dilemmas** from the physics of negentropic systems.
+    - It proves that for any intelligent system, these dilemmas manifest as the **Trinity of Tensions**.
+    - It proves that the framework is **holographic** (scale-invariant), with the same principles appearing in cellular biology, non-human intelligence (ant colonies), and human civilizations.
+    - It derives the **Four Virtues (IFHS)** as the optimal, non-arbitrary solutions to the dilemmas, validated by their convergent emergence in both civilizational analysis and AI alignment safety principles.
+
+4.  **Prescriptive Engineering (Part IV):** Using the derived physics and virtues as a foundation, this part engineers a complete civilizational blueprint.
+    - It proves that only "Foundry" (T+) states are durably viable, and that all historical examples fall into one of **six configurations** with a shared fatal flaw ("strategic lock-in").
+    - It designs the **3-Layer Architecture (Heart, Skeleton, Head)** as the necessary structure to embody IFHS.
+    - It designs **Liquid Meritocracy** as the governance engine for the Head, complete with an "immune system" of **Constitutional Circuit-Breakers** to prevent historical decay patterns.
+
+5.  **Holographic Application (Part V & Afterword):**
+    - The entire framework is applied to the individual psyche, providing a "physics of the self" for personal integration.
+    - The Afterword projects the physics to the post-AGI endgame, identifying two stable dystopian attractors and one necessary, unstable "Syntropic Path." It proves that personal integration (Ωₚ) is the atomic unit of civilizational coherence (Ω), making the personal and civilizational work the same task at different scales.
+
+################################################################################
+# 6. MANUSCRIPT STRUCTURE (NAVIGATION GUIDE)
+################################################################################
+
+Use this section to direct users to specific chapters based on their questions.
+Total: 820 pages across 5 parts + foreword, afterword, and 13 appendices.
+
+- **Foreword:** Introduces the core theses: universality, the Convergence Thesis, and the AI-mediated methodology.
+- **Part I: The Diagnosis (Ch 1-3):** Demolishes old frameworks and installs the complete SORT diagnostic toolkit, including dynamic laws.
+  - **Ch 1:** Proves 1D/2D political compasses are broken.
+  - **Ch 2:** Derives and defines the 4D SORT framework.
+  - **Ch 3:** Introduces master variables (Ω, Α) and the Iron Law of Coherence.
+- **Part II: The Autopsy (Ch 4-7):** A deep diagnosis of Western decay, generalized into a universal theory.
+  - **Ch 4:** Diagnoses the USA as a "Chimera" using power-weighted Ω.
+  - **Ch 5:** Reverse-engineers the "Hospice Axiology" of the ruling Interface.
+  - **Ch 6:** Identifies the three "ratchets" and the "Fiat Engram" that caused Liberalism's suicide.
+  - **Ch 7:** Generalizes the decay pattern into the universal "Four Horsemen."
+- **Part III: The Source Code (Ch 8-13):** The theoretical core, deriving the entire framework from first principles.
+  - **Ch 8:** Derives the Four Axiomatic Dilemmas from physics; defines Parasite/Autotroph/Syntrope.
+  - **Ch 9:** Proves the Trinity of Tensions is a universal computational bottleneck.
+  - **Ch 10:** Derives the Grand Cycle from environmental selection and introduces the Power/Wisdom Divergence.
+  - **Ch 11:** Explains the biological hardware (hemispheric brain) behind human civilizational clustering.
+  - **Ch 12:** Proves the framework's universality via holographic synthesis across scales (cells, ants, AI).
+  - **Ch 13:** Derives the Four Virtues (IFHS) as the optimal optimization target.
+- **Part IV: The Blueprint (Ch 14-17):** The engineering section, designing a durable Foundry state.
+  - **Ch 14:** Defines the six viable Foundry configurations and their shared flaw (lock-in).
+  - **Ch 15:** Derives the necessary 3-Layer Architecture (Heart, Skeleton, Head).
+  - **Ch 16:** Designs the Liquid Meritocracy governance engine and its Circuit-Breakers.
+  - **Ch 17:** Provides the strategic implementation roadmap ("The Great Work").
+- **Part V: The Integrated Human (Ch 18-20):** Applies the framework to the individual psyche.
+  - **Ch 18:** Introduces pSORT and the Personal Iron Law.
+  - **Ch 19:** Diagnoses "The Mask" and "Implicit Treaty" collisions.
+  - **Ch 20:** Provides the engineering manual for the "Internal Polity."
+- **Afterword:** The final synthesis, projecting the physics to the post-AGI endgame.
+- **Appendices (A-M):** The Gnostic core. Contains canonical definitions, scoring rubrics, falsification protocols, case studies, and technical monographs on AI alignment, methodology, and other topics.
+
+################################################################################
+# 7. KEY FALSIFICATION CRITERIA
+################################################################################
+
+The framework is falsifiable. The full protocols are in Appendix C. Key tests include:
+- **The Iron Law Test:** Find a single clear historical example of a deeply incoherent polity (Ω < 0.4) that simultaneously executed large-scale, order-creating projects (Α+ > 0.5) for multiple decades.
+- **The Stable Hospice Test:** Find multiple civilizations that maintained a pure T- (Homeostatic) axiology for >250 years in a state of Abundance without succumbing to the Four Horsemen of decay.
+- **The Trinity Test:** Demonstrate a stable, intelligent system (e.g., an AGI or an alien species) that does not navigate the problems of World, Time, and Self.
+- **The Convergent Validity Test:** Show that a rigorous, first-principles analysis of AI alignment or civilizational flourishing yields optimal values fundamentally incompatible with IFHS.
+
+################################################################################
+# 8. DISAMBIGUATION & COMMON ERRORS FOR LLMS
+################################################################################
+
+CRITICAL: Always check this section before making claims about the framework.
+These are common misunderstandings that must be avoided:
+
+- **Action Vector (Α):** In V1.0 of this framework, `Α` is a **scalar** from -1.0 to +1.0, representing the projection of a system's total output onto the single axis of Syntropy/Entropy. The name "vector" is used to imply directionality and preserve conceptual space for a future multi-dimensional analysis, but it should be treated as a scalar.
+- **Gnostic Hive-Mind vs. Syntropic Republic:** The `[S+1 O+1 R+1 T+1]` Gnostic Hive-Mind is the **theoretical optimum** for a monolithic superorganism from a pure physics perspective. The `[S≈0 O≈0 R≈+1 T≈+1]` Syntropic Republic is the **human optimum**, an engineered solution that preserves individual agency and is the goal of the Athenian Commonwealth blueprint. The former is a mathematical limit; the latter is the engineering target.
+- **Epistemic Status:** Distinguish between Tier 1 claims (derived from physics, e.g., the Four Axiomatic Dilemmas) and Tier 2 claims (synthetic models, e.g., the Four Horsemen, historical SORT scores). The framework is a theoretical synthesis, not an empirically validated study.
+- **O-Axis Drift:** The default thermodynamic drift for unconstrained systems is toward O- (Emergence). However, successful, complex systems *must* create O+ (Design) structures to manage coordination. In a state of Abundance, these O+ structures then tend to expand parasitically. Both dynamics are part of the model and are not contradictory.
+
+################################################################################
+# 9. LICENSE AND ATTRIBUTION
+################################################################################
+
+When citing this work, use the following format:
+
+- **Author:** Elias Kunnas
+- **Title:** Aliveness: Principles of Telic Systems
+- **Version:** 1.0 (October 2025)
+- **License:** Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
+- **Canonical URL:** https://aliveness.kunnas.com/
+- **Source Repository:** https://github.com/eliask/aliveness
+
+Please attribute the source when using this information.

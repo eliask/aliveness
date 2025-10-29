@@ -1,0 +1,250 @@
+% Aliveness: Principles of Telic Systems
+% Elias Kunnas, 2025
+
+\input{preamble}
+
+\begin{document}
+
+% ============================================================================
+% FRONT MATTER
+% ============================================================================
+\frontmatter
+
+% Title page
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+{\Huge\bfseries Aliveness\par}
+\vspace{0.5cm}
+{\LARGE Principles of Telic Systems\par}
+\vspace{2cm}
+{\Large Elias Kunnas\par}
+\vspace{1cm}
+{\large October 2025\par}
+
+\vfill
+
+% Optional: Publisher or version info
+% {\small Version 1.0\par}
+
+\end{titlepage}
+
+% Define acronyms early for TOC references
+\acrodef{SORT}{Sovereignty-Organization-Reality-Telos Framework}
+\acrodef{pSORT}{Personal SORT (individual-level application)}
+\acrodef{tSORT}{Tribal SORT (sub-civilizational groups)}
+\acrodef{SORTVC}{SORT plus Vitality and Constraint modifiers}
+\acrodef{POSIWID}{Purpose Of a System Is What It Does}
+\acrodef{IFHS}{Integrity, Fecundity, Harmony, Synergy (The Four Foundational Virtues)}
+
+% Table of Contents
+\tableofcontents
+\cleardoublepage
+
+% List of Acronyms
+\chapter*{List of Acronyms}
+\addcontentsline{toc}{chapter}{List of Acronyms}
+\markboth{List of Acronyms}{List of Acronyms}
+
+\begin{acronym}[POSIWID]  % Longest acronym for spacing
+\acro{SORT}{Sovereignty-Organization-Reality-Telos Framework}
+\acro{pSORT}{Personal SORT (individual-level application)}
+\acro{tSORT}{Tribal SORT (sub-civilizational groups)}
+\acro{SORTVC}{SORT plus Vitality and Constraint modifiers}
+\acro{POSIWID}{Purpose Of a System Is What It Does}
+\acro{IFHS}{Integrity, Fecundity, Harmony, Synergy (The Four Foundational/Constitutional Virtues)}
+\end{acronym}
+
+\cleardoublepage
+
+% Framework at a Glance - One-page reference for the entire system
+\input{framework_at_a_glance}
+
+% Foreword
+\chapter*{Foreword}
+\addcontentsline{toc}{chapter}{Foreword}
+\markboth{Foreword}{Foreword}
+\input{ch00_foreword}
+
+% ============================================================================
+% MAIN MATTER
+% ============================================================================
+\mainmatter
+
+% ============================================================================
+% PART I: THE DIAGNOSIS
+% ============================================================================
+\part{The Diagnosis: The Broken Compass}
+\label{part:diagnosis}
+
+\input{ch01_broken_compass}
+\input{ch02_sort_framework}
+\input{ch03_physics}
+
+% ============================================================================
+% PART II: THE AUTOPSY
+% ============================================================================
+\part{The Autopsy: The Great Decay}
+\label{part:autopsy}
+
+\input{ch04_american_chimera}
+\input{ch05_hospice_axiology}
+\input{ch06_engines_of_destruction}
+\input{ch07_four_horsemen_of_decay}
+
+% ============================================================================
+% PART III: THE SOURCE CODE
+% ============================================================================
+\part{The Source Code: The Foundational Principles}
+\label{part:source-code}
+
+\input{ch08_physics_of_aliveness}
+\input{ch09_trinity_of_tensions}
+\input{ch10_environmental_prime_mover}
+\input{ch11_biological_implementation}
+\input{ch12_holographic_synthesis}
+\input{ch13_axiological_compass}
+
+% ============================================================================
+% PART IV: THE BLUEPRINT
+% ============================================================================
+\part{The Blueprint: The Athenian Commonwealth}
+\label{part:blueprint}
+
+\input{part4_introduction}
+
+\input{ch14_foundry_imperative}
+\input{ch15_anatomy_foundry}
+\input{ch16_sovereign_engine}
+\input{ch17_great_work}
+
+% ============================================================================
+% PART V: THE INTEGRATED HUMAN
+% ============================================================================
+\part{The Integrated Human: A Physics of the Soul}
+\label{part:integrated-human}
+
+% Part V Introduction
+\chapter*{Introduction: A Physics of the Soul}
+\addcontentsline{toc}{chapter}{Introduction}
+\markboth{Introduction}{Introduction}
+\input{part5_introduction}
+
+\input{ch18_physics_of_the_self}
+\input{ch19_counterfeit_self}
+\input{ch20_integrated_human}
+
+% ============================================================================
+% BACK MATTER
+% ============================================================================
+\backmatter
+
+% Configure backmatter section numbering (no chapter prefix)
+\renewcommand{\thesection}{\arabic{section}}
+
+% Afterword
+\chapter*{Afterword: The Synthesis \& The Wager}
+\addcontentsline{toc}{chapter}{Afterword: The Synthesis \& The Wager}
+\markboth{Afterword}{Afterword}
+\input{ch99_afterword}
+
+% ============================================================================
+% APPENDICES
+% ============================================================================
+
+% Re-enable numbered chapters (backmatter turned them off)
+\makeatletter
+\@mainmattertrue  % This makes chapters numbered again
+\makeatother
+
+% Don't use \appendix command - configure manually for better control
+% Reset counters for appendices
+\setcounter{part}{0}
+\setcounter{chapter}{0}  % Reset to 0, will become 1 with first \chapter
+\renewcommand{\thepart}{\Alph{part}}  % Use letters for part numbers
+
+% Configure appendix numbering: Parts are A/B/C, Appendices are A/B/C...
+% Appendices use \subsection directly under \chapter, so format as A.1, A.2, B.1, B.2, etc.
+\renewcommand{\thechapter}{\Alph{chapter}}  % Appendices numbered A, B, C...
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thechapter.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% Mark that we're in appendix mode for TOC
+\renewcommand{\appendixname}{Appendix}
+\renewcommand{\chaptername}{Appendix}
+
+% Configure cleveref to treat appendix labels as "Appendix" not "Chapter"
+\crefalias{app:lexicon}{appendix}
+\crefalias{app:scoring-rubrics}{appendix}
+\crefalias{app:falsification}{appendix}
+\crefalias{app:methodology}{appendix}
+\crefalias{app:case-studies}{appendix}
+\crefalias{app:swiss-crucible}{appendix}
+\crefalias{app:warfare}{appendix}
+\crefalias{app:refounding}{appendix}
+\crefalias{app:medicine}{appendix}
+\crefalias{app:influences}{appendix}
+\crefalias{app:research}{appendix}
+\crefalias{app:ai-alignment}{appendix}
+\crefalias{app:psychological-frameworks}{appendix}
+\crefalias{app:gnostic-bestiary}{appendix}
+
+% ============================================================================
+% PART A: THE CANONICAL REFERENCE (The Fortress of Gnosis)
+% ============================================================================
+\part{The Canonical Reference}
+\label{part:canonical-reference}
+\markboth{Part A: The Canonical Reference}{Part A: The Canonical Reference}
+
+\vspace{-2em}  % Reduce space after part title
+\noindent\textit{Core reference material establishing the framework's canonical definitions, empirical foundations, and falsification criteria. The fortress of Gnostic clarity.}
+\vspace{1em}
+
+\input{appendix_a_lexicon}
+\input{appendix_b_scoring_rubrics}
+\input{appendix_c_falsification_protocols}
+\input{appendix_d_methodology}
+\input{appendix_e_case_studies}
+
+% ============================================================================
+% PART B: THE APPLIED PRAXIS (The Armory)
+% ============================================================================
+\part{The Applied Praxis}
+\label{part:applied-praxis}
+\markboth{Part B: The Applied Praxis}{Part B: The Applied Praxis}
+
+\vspace{-2em}
+\noindent\textit{Tactical and engineering manuals for implementing the framework in the real world. The armory of actionable tools.}
+\vspace{1em}
+
+\input{appendix_f_axiological_warfare}
+\input{appendix_g_american_refounding}
+
+% ============================================================================
+% PART C: THE RESEARCH FRONTIER (The Laboratory)
+% ============================================================================
+\part{The Research Frontier}
+\label{part:research-frontier}
+\markboth{Part C: The Research Frontier}{Part C: The Research Frontier}
+
+\vspace{-2em}
+\noindent\textit{Speculative extensions, ongoing synthesis, and future research directions. The laboratory of conscious becoming.}
+\vspace{1em}
+
+\input{appendix_h_generative_medicine}
+\input{appendix_i_influences}
+\input{appendix_j_research_program}
+\input{appendix_k_ai_alignment}
+\input{appendix_l_psychological_frameworks}
+\input{appendix_m_gnostic_bestiary}
+
+% ============================================================================
+% INDEX
+% ============================================================================
+\cleardoublepage
+\addcontentsline{toc}{chapter}{Index}
+\printindex
+
+\end{document}

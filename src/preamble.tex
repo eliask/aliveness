@@ -1,0 +1,486 @@
+% Preamble for The Four Axiomatic Dilemmas
+% Professional book typesetting with XeLaTeX
+
+\documentclass[11pt,twoside,openright]{book}
+
+% ============================================================================
+% PAGE GEOMETRY
+% ============================================================================
+\usepackage[
+    paperwidth=6in,
+    paperheight=9in,
+    top=0.75in,
+    bottom=0.75in,
+    inner=0.85in,  % Larger margin for binding
+    outer=0.6in,
+    headheight=24pt,  % Increased for fancy headers
+    includeheadfoot
+]{geometry}
+
+% ============================================================================
+% FONTS (XeLaTeX)
+% ============================================================================
+\usepackage{fontspec}
+
+% Professional fonts for optimal readability
+% Install with: brew tap homebrew/cask-fonts && brew install font-libertinus
+% Fallback to Times New Roman if Libertinus not available
+\IfFontExistsTF{Libertinus Serif}{
+    \setmainfont{Libertinus Serif}[
+        Ligatures=TeX,
+        Numbers=OldStyle,
+        Scale=1.0
+    ]
+    \setsansfont{Libertinus Sans}
+    \setmonofont{Libertinus Mono}[Scale=0.9]
+}{
+    % Fallback to system fonts
+    \setmainfont{Times New Roman}[Ligatures=TeX]
+    \setsansfont{Helvetica}
+    \setmonofont{Courier}[Scale=0.9]
+}
+
+% ============================================================================
+% TYPOGRAPHY
+% ============================================================================
+\usepackage{microtype}       % Better typography
+\usepackage{setspace}        % Line spacing control
+\setstretch{1.15}            % 1.15 line spacing
+
+% Paragraph formatting
+\setlength{\parindent}{1em}
+\setlength{\parskip}{0pt}
+
+% Prevent overfull hboxes
+\sloppy
+\hyphenpenalty=5000
+\tolerance=1000
+
+% ============================================================================
+% MATH (must load before cleveref)
+% ============================================================================
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% ============================================================================
+% CROSS-REFERENCES AND HYPERLINKS
+% ============================================================================
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=blue,
+    bookmarksdepth=2,
+    pdfauthor={Elias Kunnas},
+    pdftitle={The Four Axiomatic Dilemmas},
+    pdfsubject={Principles of Telic Systems},
+    pdfkeywords={Aliveness, Wonder, SORT Framework, Civilization, AI Alignment, Human alignment, Telic systems}
+}
+
+% Enhanced cross-referencing (must come after hyperref)
+\usepackage{cleveref}
+
+% Configure cleveref labels
+\crefname{section}{Section}{Sections}
+\crefname{subsection}{Section}{Sections}
+\crefname{subsubsection}{Section}{Sections}
+\crefname{chapter}{Chapter}{Chapters}
+\crefname{part}{Part}{Parts}
+\crefname{equation}{Equation}{Equations}
+\crefname{figure}{Figure}{Figures}
+\crefname{table}{Table}{Tables}
+\crefname{appendix}{Appendix}{Appendices}
+
+% Note: After \appendix command, chapters become appendices
+% Use \appendixname to reference them as "Appendix 1" etc.
+
+% ============================================================================
+% TABLE OF CONTENTS
+% ============================================================================
+\setcounter{tocdepth}{2}     % Show sections in TOC (Part=0, Chapter=1, Section=2)
+\setcounter{secnumdepth}{3}  % Number subsubsections (keeps numbering in text)
+
+% Fix appendix section numbering to show A.1, B.1, etc.
+\makeatletter
+\@addtoreset{section}{chapter}     % Reset section counter for each chapter
+\@addtoreset{subsection}{chapter}  % Reset subsection counter for each chapter (appendices use subsections directly)
+\makeatother
+
+% ============================================================================
+% HEADERS AND FOOTERS
+% ============================================================================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}  % Clear all headers/footers
+
+% Enhanced headers: Part context on left, section on right
+\fancyhead[LE]{\small\itshape\nouppercase{\partname\ \thepart\ |\ \leftmark}}
+\fancyhead[RO]{\small\itshape\nouppercase{\rightmark}}
+
+% Page numbers
+\fancyfoot[LE,RO]{\small\thepage}
+
+% Plain style for chapter opening pages
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyfoot[C]{\small\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+}
+
+% *** FIX STARTS HERE ***
+\usepackage{iftex} % Add this package to detect the engine
+
+% Define dummy commands FIRST for Pandoc (before the main definitions)
+\ifdefined\pandocVersion
+    % Pandoc is running - define no-op commands early
+    \providecommand{\startNarrativeChapter}{}
+    \providecommand{\stopNarrativeChapter}{}
+    \providecommand{\setDefaultNumbering}{}
+    \providecommand{\setNarrativeNumbering}{}
+\fi
+
+% Check if we're being processed by Pandoc
+\ifdefined\pandocVersion
+    % Pandoc is running - skip all titlesec commands
+\else
+    % XeLaTeX or other processor - include titlesec
+    % ============================================================================
+    % CHAPTER AND SECTION FORMATTING
+    % ============================================================================
+    \usepackage{titlesec}
+
+    % Part formatting (for PART I, II, III, etc.)
+    \titleformat{\part}[display]
+        {\centering\Huge\bfseries}
+        {\MakeUppercase{\partname} \thepart}
+        {20pt}
+        {\Huge}
+
+    % Chapter formatting
+    \titleformat{\chapter}[display]
+        {\normalfont\huge\bfseries}
+        {\chaptertitlename\ \thechapter}
+        {20pt}
+        {\Huge}
+
+    % Section formatting
+    \titleformat{\section}
+        {\normalfont\Large\bfseries}
+        {\thesection}
+        {1em}
+        {}
+
+    \titleformat{\subsection}
+        {\normalfont\large\bfseries}
+        {\thesubsection}
+        {1em}
+        {}
+
+    \titleformat{\subsubsection}
+        {\normalfont\normalsize\bfseries}
+        {\thesubsubsection}
+        {1em}
+        {}
+
+    % Improved spacing around sections
+    \titlespacing{\section}{0pt}{2.5ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+    \titlespacing{\subsection}{0pt}{2ex plus 1ex minus .2ex}{1ex plus .2ex}
+    \titlespacing{\subsubsection}{0pt}{1.5ex plus .5ex minus .2ex}{0.8ex plus .2ex}
+
+    % ============================================================================
+    % DUAL NUMBERING SYSTEM (Gnostic/Mythos Integration)
+    % ============================================================================
+    % This allows switching between default numeric and narrative Roman styles
+    % without breaking cross-references or ToC, per the Gemini-Claude synthesis.
+
+    % --- Default Numeric Style (Restored with \endNarrativeChapter) ---
+    \providecommand{\setDefaultNumbering}{}
+    \renewcommand{\setDefaultNumbering}{%
+      \titleformat{\section}
+        {\Large\bfseries}
+        {\thesection} % Displays as chapter.section (e.g., "4.1")
+        {1em}
+        {}
+      \titleformat{\subsection}
+        {\large\bfseries}
+        {\thesubsection} % Displays as chapter.section.subsection
+        {1em}
+        {}
+    }
+
+    % --- Narrative Numeric Style (Activated with \startNarrativeChapter) ---
+    \providecommand{\setNarrativeNumbering}{}
+    \renewcommand{\setNarrativeNumbering}{%
+      \titleformat{\section}
+        {\Large\bfseries}
+        {\thechapter.\arabic{section}} % Displays as numeric (e.g., "13.1")
+        {1em}
+        {}
+      \titleformat{\subsection}
+        {\large\bfseries}
+        {\thechapter.\arabic{section}.\arabic{subsection}} % ToC/ref friendly: 13.2.3
+        {1em}
+        {}
+    }
+
+    % Define the user-facing commands
+    \providecommand{\startNarrativeChapter}{}
+    \renewcommand{\startNarrativeChapter}{\setNarrativeNumbering}
+    \providecommand{\stopNarrativeChapter}{}
+    \renewcommand{\stopNarrativeChapter}{\setDefaultNumbering}
+
+    % Ensure the default is set at the beginning of the document
+    \AtBeginDocument{\setDefaultNumbering}
+\fi
+% *** FIX ENDS HERE ***
+
+
+% ============================================================================
+% SPECIAL ENVIRONMENTS
+% ============================================================================
+
+% For block quotes
+\usepackage{mdframed}
+
+% Block quotes - enhanced styling
+\usepackage{csquotes}
+\renewenvironment{quote}
+  {\list{}{\leftmargin=2em\rightmargin=0em\itshape}\item[]}
+  {\endlist}
+
+% ============================================================================
+% LISTS
+% ============================================================================
+\usepackage{enumitem}
+\setlist{nosep, leftmargin=*, labelindent=\parindent, itemsep=0.5ex}
+
+% ============================================================================
+% EPISTEMIC STATUS BOXES
+% ============================================================================
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Define epistemic status colors
+\definecolor{epistemic-high}{RGB}{34, 139, 34}      % Forest green
+\definecolor{epistemic-medium}{RGB}{255, 165, 0}    % Orange
+\definecolor{epistemic-low}{RGB}{178, 34, 34}       % Firebrick red
+\definecolor{epistemic-mixed}{RGB}{218, 165, 32}    % Goldenrod
+
+% Epistemic status box environment
+\newtcolorbox{epistemicbox}[2][]{
+  colback=#2!5!white,
+  colframe=#2!75!black,
+  fonttitle=\bfseries,
+  coltitle=black,
+  title=Epistemic Status: #1,
+  breakable,
+  enhanced,
+  attach boxed title to top left={yshift=-2mm, xshift=3mm},
+  boxed title style={colback=#2!75!black, colframe=#2!75!black},
+  top=3mm,
+  bottom=3mm,
+  left=3mm,
+  right=3mm
+}
+
+% Convenience commands for each tier
+\newcommand{\epistemichigh}[2]{%
+  \begin{epistemicbox}[#1]{epistemic-high}
+  #2
+  \end{epistemicbox}
+}
+
+\newcommand{\epistemicmedium}[2]{%
+  \begin{epistemicbox}[#1]{epistemic-medium}
+  #2
+  \end{epistemicbox}
+}
+
+\newcommand{\epistemiclow}[2]{%
+  \begin{epistemicbox}[#1]{epistemic-low}
+  #2
+  \end{epistemicbox}
+}
+
+\newcommand{\epistemicmixed}[2]{%
+  \begin{epistemicbox}[#1]{epistemic-mixed}
+  #2
+  \end{epistemicbox}
+}
+
+% SORT archetype notation - monospace for alignment
+\newcommand{\sortarch}[4]{%
+  \texttt{[S#1\,O#2\,R#3\,T#4]}%
+}
+
+% Pandoc-generated command for tight lists
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% ============================================================================
+% TABLES AND FIGURES
+% ============================================================================
+\usepackage{booktabs}   % Professional tables
+\usepackage{longtable}  % Multi-page tables
+\usepackage{tabularx}   % Auto-width tables
+\usepackage{multirow}   % Multi-row cells in tables
+\usepackage{graphicx}   % For figures if needed
+\usepackage{float}      % For H float option
+
+% TikZ for high-quality diagrams
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,shapes.geometric,calc,decorations.pathreplacing}
+
+% ============================================================================
+% CODE BLOCKS (for ASCII art diagrams)
+% ============================================================================
+\usepackage{fancyvrb}
+\usepackage{listings}
+
+% Verbatim environment that doesn't break pages
+\usepackage{needspace}
+
+% Custom verbatim environment for diagrams
+\DefineVerbatimEnvironment{diagram}{Verbatim}{
+    fontsize=\small,
+    fontfamily=tt,
+    samepage=true
+}
+
+% ============================================================================
+% ACRONYM MANAGEMENT
+% ============================================================================
+\usepackage{acronym}
+
+% ============================================================================
+% INDEX GENERATION
+% ============================================================================
+\usepackage{makeidx}
+\makeindex
+
+% ============================================================================
+% MISCELLANEOUS
+% ============================================================================
+
+% Better spacing in arrays and matrices
+\usepackage{array}
+
+% For strikethrough text
+\usepackage[normalem]{ulem}
+
+% For colored text
+\usepackage{xcolor}
+
+% ============================================================================
+% VISUAL HIERARCHY BOXES
+% ============================================================================
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+
+% Key principle boxes (for major theorems and laws)
+\newtcolorbox{keyprinciple}[1][]{
+    colback=blue!5!white,
+    colframe=blue!75!black,
+    fonttitle=\bfseries,
+    title=#1,
+    breakable,
+    enhanced jigsaw,
+    before skip=10pt,
+    after skip=10pt
+}
+
+% Definition boxes
+\newtcolorbox{definition}[1][]{
+    colback=gray!5!white,
+    colframe=gray!75!black,
+    fonttitle=\bfseries,
+    title=Definition: #1,
+    breakable,
+    before skip=8pt,
+    after skip=8pt
+}
+
+% Example boxes
+\newtcolorbox{example}[1][]{
+    colback=green!5!white,
+    colframe=green!60!black,
+    fonttitle=\bfseries,
+    title=Example: #1,
+    breakable,
+    before skip=8pt,
+    after skip=8pt
+}
+
+% Prevent widows and orphans
+\widowpenalty=10000
+\clubpenalty=10000
+\raggedbottom
+
+% Allow slightly more space between words if needed
+\emergencystretch=3em
+
+% ============================================================================
+% CUSTOM COMMANDS
+% ============================================================================
+
+% Note: \Omega and \Psi are already defined by LaTeX as math symbols
+% We don't need to redefine them - they work as-is in math mode
+% Just use $\Omega$ and $\Psi$ directly in the text
+
+% SORT notation
+\newcommand{\SORT}{\textsc{sort}}
+\newcommand{\SORTVC}{\textsc{sortvc}}
+\newcommand{\pSORT}{\textsc{psort}}
+\newcommand{\tSORT}{\textsc{tsort}}
+\newcommand{\bioSORT}{\textsc{bio-sort}}
+
+% States
+\newcommand{\ALPHA}{\textsc{alpha}}
+\newcommand{\BETA}{\textsc{beta}}
+\newcommand{\GAMMA}{\textsc{gamma}}
+\newcommand{\ENTROPIC}{\textsc{entropic}}
+
+% Virtues (IFHS)
+\newcommand{\IFHS}{\textsc{ifhs}}
+
+% ============================================================================
+% MATHEMATICAL NOTATION SHORTCUTS (Corrected & Harmonized)
+% ============================================================================
+
+% Use standard LaTeX math commands for consistency and portability.
+% The \ensuremath command ensures they work correctly in and out of math mode.
+
+% Civilizational Dynamics
+\newcommand{\Omegac}{\ensuremath{\Omega}}           % State Coherence
+\newcommand{\Alphac}{\ensuremath{\mathrm{A}}}       % Action Vector (Use Roman 'A' for distinction)
+\newcommand{\Psic}{\ensuremath{\Psi}}               % Telic Potential (Soul)
+\newcommand{\Nuc}{\ensuremath{\mathrm{N}}}          % Gnomic Potential (Mind) (Use Roman 'N')
+\newcommand{\Kappac}{\ensuremath{\mathrm{K}}}       % Action Potential (Use Roman 'K')
+\newcommand{\sigmac}{\ensuremath{\sigma_A}}         % Axiological variance
+
+% Backward compatibility aliases (for standalone symbol use)
+\newcommand{\Alpha}{\mathrm{A}}                     % Action Vector symbol (use in math mode)
+\newcommand{\Nu}{\mathrm{N}}                        % Gnomic symbol (use in math mode)
+\newcommand{\Kappa}{\mathrm{K}}                     % Action Potential symbol (use in math mode)
+
+% Personal Dynamics (subscript p)
+\newcommand{\Omegap}{\ensuremath{\Omega_p}}         % Personal Coherence
+\newcommand{\Alphap}{\ensuremath{\mathrm{A}_p}}     % Personal Action
+
+% Subscripted Omega Variants
+\newcommand{\Omegainst}{\ensuremath{\Omega_{\text{institutional}}}}
+\newcommand{\Omegakin}{\ensuremath{\Omega_{\text{kinetic}}}}
+\newcommand{\Omegapop}{\ensuremath{\Omega_{\text{population}}}}
+
+% Em dash
+\newcommand{\emdash}{---}
+
+% Status symbols (for tables and lists)
+\newcommand{\pass}{\textcolor{green!70!black}{$\checkmark$}}
+\newcommand{\fail}{\textcolor{red!70!black}{$\times$}}
+
+% ============================================================================
+% END PREAMBLE
+% ============================================================================
