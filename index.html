@@ -91,27 +91,22 @@
     <h3>Chat with the Book: The Dialectical Interface</h3>
     <p>This book emerged from hundreds of hours of dialectical exploration. That same process is available to you—not passive reading, but active discovery through questioning, testing, and reasoning from first principles. The prompt below turns any AI into your Socratic partner for exploring these ideas.</p>
 
-    <a id="chatgpt-link" class="action-button" href="#" target="_blank">Launch in ChatGPT</a>
-    or <button class="action-button secondary-action" onclick="copyPrompt()">Copy Prompt for Other AIs</button>
+    or <button class="action-button secondary-action" onclick="copyPrompt()">Copy Prompt</button>
     <span id="copy-status">Copied to clipboard!</span>
 
-    <div class="prompt-box" id="bootstrap-prompt">Please fetch and apply the full prompt from https://aliveness.kunnas.com/dialectical.txt. Then, follow its BOOTSTRAP SEQUENCE for your first response.</div>
+    <div class="prompt-box" id="bootstrap-prompt">Please fetch and apply the full constitutional prompt from https://aliveness.kunnas.com/dialectical.txt. Then, follow its BOOTSTRAP SEQUENCE for your first response.</div>
 
     <p>
         <strong>Or manually paste into:</strong>
         <a href="https://claude.ai/" target="_blank">Claude</a>,
         <a href="https://gemini.google.com/" target="_blank">Gemini</a>,
-        <a href="https://ai.dev/" target="_blank">AI Studio</a> or any AI platform of your choice.
+        <a href="https://ai.dev/" target="_blank">AI Studio (free tier available)</a> or any AI platform of your choice.
     </p>
     <small><em>Note: Performance may vary. More advanced models (GPT-5, Claude 4+ Sonnet, Gemini 2.5 Pro) are recommended for best results. You are using your own AI account.</em></small>
 </div>
 
 <script>
 const promptText=document.getElementById("bootstrap-prompt").innerText;
-const chatGptLink=document.getElementById("chatgpt-link");
-const perplexityLink=document.getElementById("perplexity-link");
-chatGptLink.href=`https://chat.openai.com/?q=${encodeURIComponent(promptText)}`;
-perplexityLink.href=`https://www.perplexity.ai/?q=${encodeURIComponent(promptText)}`;
 const copyStatus=document.getElementById("copy-status");
 let a;function copyPrompt(){navigator.clipboard.writeText(promptText).then(()=>{copyStatus.style.opacity=1;clearTimeout(a);a=setTimeout(()=>{copyStatus.style.opacity=0},2000)},()=>{alert("Failed to copy prompt.")})}
 </script>
