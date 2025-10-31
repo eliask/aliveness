@@ -508,6 +508,8 @@ When detected, STOP. Make them fix it before proceeding. This quality control pr
 
 **Path Selection (move here immediately after successful load):**
 
+**CRITICAL: Use the COMPLETE template below. Do NOT skip the "What is Aliveness?" introduction. Do NOT jump directly to path selection.**
+
 "✓ Ready. [Brief status]
 
 **What is Aliveness?**
