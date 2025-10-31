@@ -49,7 +49,7 @@
         .action-button:hover{background-color:#004c99;color:#fff;text-decoration:none}
         .secondary-action{background-color:#e9e9e9;color:#333}
         .secondary-action:hover{background-color:#d1d1d1;color:#333}
-        #copy-status{ font-family:sans-serif; font-size:14px; color:green; display:inline-block; opacity:0; transition:opacity .1s ease-in-out; }
+        .copy-status{ font-family:sans-serif; font-size:14px; color:green; display:inline-block; opacity:0; transition:opacity .1s ease-in-out; }
         #bootstrap-prompt{ user-select: all; }
     </style>
 </head>
@@ -89,26 +89,135 @@
 
 <div class="chat-widget">
     <h3>Chat with the Book: The Dialectical Interface</h3>
-    <p>This book emerged from hundreds of hours of dialectical exploration. That same process is available to you—not passive reading, but active discovery through questioning, testing, and reasoning from first principles. The prompt below turns any AI into your Socratic partner for exploring these ideas.</p>
+    <p>This book emerged from hundreds of hours of dialectical exploration. That same process is available to you—not passive reading, but active discovery through questioning, testing, and reasoning from first principles.</p>
 
-    or <button class="action-button secondary-action" onclick="copyPrompt()">Copy Prompt</button>
-    <span id="copy-status">Copied to clipboard!</span>
+    <h4 style="margin-top: 20px; margin-bottom: 10px;">Setup Instructions</h4>
 
-    <div class="prompt-box" id="bootstrap-prompt">Please fetch and apply the full constitutional prompt from https://aliveness.kunnas.com/dialectical.txt. Then, follow its BOOTSTRAP SEQUENCE for your first response.</div>
+    <p style="margin-bottom: 15px;"><strong>Step 1: Download the materials</strong></p>
+    <button class="action-button" onclick="downloadFile('https://aliveness.kunnas.com/dialectical.txt', 'Aliveness__dialectical_prompt.txt')">Download Dialectical Prompt (TXT)</button>
+    <button class="action-button" onclick="downloadFile('https://aliveness.kunnas.com/Aliveness__Principles_of_Telic_Systems.txt', 'Aliveness__Principles_of_Telic_Systems.txt')">Download Full Book (TXT)</button>
 
-    <p>
-        <strong>Or manually paste into:</strong>
-        <a href="https://claude.ai/" target="_blank">Claude</a>,
-        <a href="https://gemini.google.com/" target="_blank">Gemini</a>,
-        <a href="https://ai.dev/" target="_blank">AI Studio (free tier available)</a> or any AI platform of your choice.
-    </p>
-    <small><em>Note: Performance may vary. More advanced models (GPT-5, Claude 4+ Sonnet, Gemini 2.5 Pro) are recommended for best results. You are using your own AI account.</em></small>
+    <p style="margin-top: 20px; margin-bottom: 15px;"><strong>Step 2: Choose your platform</strong></p>
+
+    <div style="background-color: #f0f8ff; padding: 15px; margin-bottom: 15px; border-left: 4px solid #0066cc;">
+        <strong>🏆 Recommended: <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a></strong> (Gemini 2.5 Flash/Pro)<br>
+        <small>Free tier available • 1M+ context • Best overall experience</small><br><br>
+        <strong>Method A:</strong> Upload files to chat<br>
+        <small style="display: block; margin-left: 20px; margin-top: 5px; margin-bottom: 8px;">
+        1. Start chat with: <code style="background: #e8e8e8; padding: 2px 6px; border-radius: 3px; user-select: all;">Please apply the full constitutional prompt below. Then, follow its BOOTSTRAP SEQUENCE for your first response.</code><br>
+        2. Upload both downloaded TXT files (dialectical prompt first, then book)<br>
+        3. Send the message
+        </small>
+        <strong>Method B:</strong> One-click paste (AI Studio only):<br>
+        <button class="action-button" onclick="copyFullPrompt()" style="margin-top: 8px;">Copy Combined Prompt</button>
+        <span id="copy-status-full" class="copy-status">Copied!</span>
+        <small style="display: block; margin-top: 5px;"><em>Combines bootstrap + dialectical prompt + full book (~1.2MB) then paste into AI Studio<br>⚠️ NOT compatible with gemini.google.com or Gemini mobile app — use Method A instead</em></small>
+    </div>
+
+    <div style="background-color: #f9f9f9; padding: 15px; margin-bottom: 15px; border-left: 4px solid #666;">
+        <strong>Alternative: Other providers with 1M+ context</strong><br>
+        <small>Any AI platform with 1M+ context window (e.g., Claude has 1M window in limited beta, OpenRouter, etc.)</small><br><br>
+        <strong>Method A:</strong> Upload files to chat<br>
+        <small style="display: block; margin-left: 20px; margin-top: 5px; margin-bottom: 8px;">
+        Same as AI Studio Method A above — type the bootstrap prompt, upload both TXT files, send
+        </small>
+        <strong>Method B:</strong> If provider supports URL fetch:<br>
+        <button class="action-button" onclick="copyBootstrap()" style="margin-top: 8px;">Copy Bootstrap Prompt</button>
+        <span id="copy-status-bootstrap" class="copy-status">Copied!</span>
+        <small style="display: block; margin-left: 20px; margin-top: 8px; margin-bottom: 8px;">
+        Paste this prompt and send (AI will fetch dialectical prompt + book automatically):<br>
+        <code style="background: #e8e8e8; padding: 2px 6px; border-radius: 3px; user-select: all; font-size: 11px;">Please fetch and apply the full constitutional prompt from https://aliveness.kunnas.com/dialectical.txt. Then, follow its BOOTSTRAP SEQUENCE for your first response.</code>
+        </small>
+    </div>
+
+    <small><em>You are using your own AI account. <strong>1M+ context window models strongly recommended</strong> (e.g. Gemini 2.5 Flash/Pro in AI Studio).</em></small>
 </div>
 
 <script>
-const promptText=document.getElementById("bootstrap-prompt").innerText;
-const copyStatus=document.getElementById("copy-status");
-let a;function copyPrompt(){navigator.clipboard.writeText(promptText).then(()=>{copyStatus.style.opacity=1;clearTimeout(a);a=setTimeout(()=>{copyStatus.style.opacity=0},2000)},()=>{alert("Failed to copy prompt.")})}
+// Bootstrap prompt copy
+const bootstrapText = "Please fetch and apply the full constitutional prompt from https://aliveness.kunnas.com/dialectical.txt. Then, follow its BOOTSTRAP SEQUENCE for your first response.";
+const copyStatusBootstrap = document.getElementById("copy-status-bootstrap");
+const copyStatusFull = document.getElementById("copy-status-full");
+let timeoutBootstrap, timeoutFull;
+
+function copyBootstrap() {
+    navigator.clipboard.writeText(bootstrapText).then(() => {
+        copyStatusBootstrap.style.opacity = 1;
+        clearTimeout(timeoutBootstrap);
+        timeoutBootstrap = setTimeout(() => { copyStatusBootstrap.style.opacity = 0; }, 2000);
+    }, () => { alert("Failed to copy prompt."); });
+}
+
+// Full self-contained prompt copy
+async function copyFullPrompt() {
+    try {
+        // Show loading state
+        copyStatusFull.textContent = "Downloading...";
+        copyStatusFull.style.opacity = 1;
+        copyStatusFull.style.color = "#666";
+
+        // Fetch both files
+        const [dialecticalResp, bookResp] = await Promise.all([
+            fetch('https://aliveness.kunnas.com/dialectical.txt'),
+            fetch('https://aliveness.kunnas.com/Aliveness__Principles_of_Telic_Systems.txt')
+        ]);
+
+        if (!dialecticalResp.ok || !bookResp.ok) {
+            throw new Error("Failed to download files");
+        }
+
+        const dialectical = await dialecticalResp.text();
+        const book = await bookResp.text();
+
+        // Combine with clear separator
+        const combined = `Please apply the full constitutional prompt below. Then, follow its BOOTSTRAP SEQUENCE for your first response.
+
+${dialectical}
+
+################################################################################
+# FULL BOOK TEXT FOLLOWS
+################################################################################
+# This is the complete text of "Aliveness: Principles of Telic Systems"
+# Use this as your primary knowledge base for answering questions.
+################################################################################
+
+${book}`;
+
+        // Copy to clipboard
+        await navigator.clipboard.writeText(combined);
+
+        copyStatusFull.textContent = "Copied! (~1.2MB)";
+        copyStatusFull.style.color = "green";
+        clearTimeout(timeoutFull);
+        timeoutFull = setTimeout(() => { copyStatusFull.style.opacity = 0; }, 3000);
+
+    } catch (error) {
+        copyStatusFull.textContent = "Failed - try downloading files separately";
+        copyStatusFull.style.color = "red";
+        clearTimeout(timeoutFull);
+        timeoutFull = setTimeout(() => { copyStatusFull.style.opacity = 0; }, 4000);
+    }
+}
+
+// Download file helper function
+async function downloadFile(url, filename) {
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error("Download failed");
+
+        const blob = await response.blob();
+        const blobUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = blobUrl;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(blobUrl);
+    } catch (error) {
+        alert("Failed to download file. Please try again.");
+    }
+}
 </script>
 
 <h2>Download</h2>
