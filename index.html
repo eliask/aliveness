@@ -51,6 +51,19 @@
         .secondary-action:hover{background-color:#d1d1d1;color:#333}
         .copy-status{ font-family:sans-serif; font-size:14px; color:green; display:inline-block; opacity:0; transition:opacity .1s ease-in-out; }
         #bootstrap-prompt{ user-select: all; }
+        .collapsible-content { display: none; margin-top: 15px; }
+        .collapsible-content.expanded { display: block; }
+        .expand-button {
+            background: none;
+            border: none;
+            color: #0066cc;
+            cursor: pointer;
+            font-size: 16px;
+            text-decoration: underline;
+            padding: 0;
+            font-family: Georgia, serif;
+        }
+        .expand-button:hover { color: #004c99; }
     </style>
 </head>
 <body>
@@ -59,38 +72,37 @@
 
 <p class="subtitle">A physics-based framework for diagnosing and engineering telic systems—from civilizations to artificial intelligence to the self.</p>
 
+<blockquote style="font-size: 20px; margin: 40px 0; padding: 20px 30px; background-color: #f0f8ff; border-left: 4px solid #0066cc;">
+<strong>Aliveness is the capacity of a telic system to generate and sustain negentropic potential over deep time.</strong>
+</blockquote>
+
+<p>A <strong>telic system</strong> is any goal-directed agent that imposes its own order on the world—a virus hijacking a cell, a beaver engineering an ecosystem, a civilization building an empire, an AI pursuing a goal. These systems are defined by their <em>net effect on the organized complexity of their environment</em>: whether they are net destroyers (Parasites), net preservers (Autotrophs), or net creators (Syntropes).</p>
+
 <hr>
 
-<p>This work wagers that the rise and fall of civilizations, the alignment of artificial intelligence, and the flourishing of individual consciousness are not separate problems. They are scale-invariant manifestations of the same underlying physics.</p>
+<p>The rise and fall of civilizations, the alignment of artificial intelligence, and the flourishing of individual consciousness are scale-invariant manifestations of the same underlying physics. Any intelligent system must navigate four inescapable physical dilemmas. The solutions it chooses determine its trajectory.</p>
 
 <p>Until now, civilizational decay has been illegible—patterns without coordinates, dynamics without measurement. This framework provides the diagnostic tools to make decay legible and therefore engineerable.</p>
 
-<p>Any intelligent system—human, alien, or artificial—must navigate four inescapable physical dilemmas. The solutions it chooses determine its trajectory.</p>
-
-<p>It is a V1.0 theoretical synthesis, offered for adversarial critique and collaborative refinement.</p>
-
 <hr>
 
-<h2>Executive Summary</h2>
+<h2>What This Enables</h2>
 
-<p>This book presents a new, unified framework for diagnosing and engineering complex adaptive systems, arguing that the dynamics of civilizational rise and fall, the alignment of artificial intelligence, and the flourishing of individual consciousness are scale-invariant manifestations of a single, universal physics of "Aliveness." It derives a four-dimensional coordinate system, <strong>SORT (Sovereignty, Organization, Reality, Telos)</strong>, from four inescapable physical trade-offs any telic system must navigate, providing a diagnostic tool that replaces flawed one- and two-dimensional political frameworks.</p>
+<p><strong>For Civilizations:</strong> Diagnose current state, predict trajectories, engineer durable institutions immune to historical decay patterns.</p>
 
-<p><strong>Part I: The Diagnosis</strong> installs the SORT toolkit and introduces the <strong>Iron Law of Coherence</strong>: a system at war with itself (Low-Ω) cannot be a net creator of order (High-Α+).</p>
+<p><strong>For AI Alignment:</strong> Ground alignment in universal physics rather than arbitrary human preferences. The same computational constraints that govern civilization-building govern AGI safety.</p>
 
-<p><strong>Part II: The Autopsy</strong> diagnoses the modern West as a Chimera—a coherent parasitic Interface ruling over a fragmented Substrate. It generalizes this into the <strong>Four Horsemen</strong>, a universal theory of civilizational collapse triggered by success.</p>
+<p><strong>For Personal Integration:</strong> The psyche is a telic system. The <strong>Mask</strong> (counterfeit personality) blocks coherence and authentic living. Integration enables sustained creative flourishing—personal Syntropy.</p>
 
-<p><strong>Part III: The Source Code</strong> derives the <strong>Four Axiomatic Dilemmas</strong> from thermodynamics and proves the <strong>Trinity of Tensions</strong> applies to any intelligent system. It establishes the <strong>Four Foundational Virtues (IFHS: Integrity, Fecundity, Harmony, Synergy)</strong> as optimal solutions through convergent validity—showing civilizational physics and AI alignment independently arrive at identical principles.</p>
-
-<p><strong>Part IV: The Blueprint</strong> engineers the <strong>Athenian Commonwealth</strong>—a novel civilizational model with a <strong>3-Layer Architecture</strong> (Heart, Skeleton, Head) and <strong>Liquid Meritocracy</strong> governance designed to embody the Four Virtues and escape historical failure modes.</p>
-
-<p><strong>Part V: The Integrated Human</strong> applies the holographic principle to individual psychology, diagnosing the <strong>Mask</strong> (counterfeit personality) as the primary cause of low personal coherence and providing engineering protocols for building an Internal Polity.</p>
-
-<p><em>For detailed chapter-by-chapter summaries, see <a href="SUMMARIES.md">Comprehensive Summaries</a>.</em></p>
+<p><em>See <a href="SUMMARIES.md">comprehensive chapter summaries</a> for detailed breakdown of all five parts.</em></p>
 
 <div class="chat-widget">
     <h3>Chat with the Book: The Dialectical Interface</h3>
     <p>This book emerged from hundreds of hours of dialectical exploration. That same process is available to you—not passive reading, but active discovery through questioning, testing, and reasoning from first principles.</p>
 
+    <button class="expand-button" onclick="toggleChatInstructions()">▶ Show setup instructions</button>
+
+    <div id="chat-instructions" class="collapsible-content">
     <h4 style="margin-top: 20px; margin-bottom: 10px;">Setup Instructions</h4>
 
     <p style="margin-bottom: 15px;"><strong>Step 1: Download the materials</strong></p>
@@ -131,9 +143,23 @@
     </div>
 
     <small><em>You are using your own AI account. <strong>1M+ context window models strongly recommended</strong> (e.g. Gemini 2.5 Flash/Pro in AI Studio).</em></small>
+    </div>
 </div>
 
 <script>
+// Toggle chat instructions
+function toggleChatInstructions() {
+    const content = document.getElementById("chat-instructions");
+    const button = event.target;
+    if (content.classList.contains("expanded")) {
+        content.classList.remove("expanded");
+        button.textContent = "▶ Show setup instructions";
+    } else {
+        content.classList.add("expanded");
+        button.textContent = "▼ Hide setup instructions";
+    }
+}
+
 // Bootstrap prompt copy
 const bootstrapText = "Please fetch and apply the full constitutional prompt from https://aliveness.kunnas.com/dialectical.txt. Then, follow its BOOTSTRAP SEQUENCE for your first response.";
 const copyStatusBootstrap = document.getElementById("copy-status-bootstrap");
@@ -231,7 +257,7 @@ async function downloadFile(url, filename) {
     <li><a href="Part2_The_Autopsy.pdf">Part II: The Autopsy</a> (176 KB, 71 pages) — The American Chimera • Hospice axiology • Four Horsemen of decay</li>
     <li><a href="Part3_The_Source_Code.pdf">Part III: The Source Code</a> (443 KB, 190 pages) — Physics of Aliveness • Trinity of Tensions • Holographic synthesis</li>
     <li><a href="Part4_The_Blueprint.pdf">Part IV: The Blueprint</a> (303 KB, 125 pages) — Foundry imperative • 3-Layer Polity • Liquid Meritocracy • The Great Work</li>
-    <li><a href="Part5_The_Integrated_Human.pdf">Part V: The Integrated Human</a> (167 KB, 64 pages) — Physics of the self • The Mask • Unmasking protocols</li>
+    <li><a href="Part5_The_Integrated_Human.pdf">Part V: The Integrated Human</a> (167 KB, 64 pages) — Physics of the self • The Mask • 3-Layer Internal Polity</li>
     <li><a href="Appendices.pdf">Appendices</a> (656 KB, 296 pages) — 13 appendices in 3 parts: The Canonical Reference • The Applied Praxis • The Research Frontier</li>
 </ul>
 
@@ -259,37 +285,11 @@ async function downloadFile(url, filename) {
 
 <h2>Core Thesis</h2>
 
-<p>The framework rests on a single foundation:</p>
+<p>Any goal-directed system must navigate <strong><a href="articles/the-four-axiomatic-dilemmas">Four Axiomatic Dilemmas</a></strong> imposed by thermodynamics, game theory, and information theory. These generate the SORT coordinate system and three universal computational problems (the Trinity of Tensions).</p>
 
-<p><strong>Any telic system</strong> (goal-directed, negentropic agent) must solve <strong>four axiomatic dilemmas</strong> imposed by physical reality:</p>
+<p>The optimal solutions are the <strong><a href="articles/the-four-axiomatic-dilemmas">Four Foundational Virtues</a> (IFHS)</strong>: <strong>Integrity</strong> (synthesis of Mythos & Gnosis), <strong>Fecundity</strong> (synthesis of Homeostasis & Metamorphosis), <strong>Harmony</strong> (synthesis of Emergence & Design), and <strong>Synergy</strong> (synthesis of Agency & Communion).</p>
 
-<ol>
-    <li><strong>The Thermodynamic Dilemma (T-axis):</strong> Conserve energy to maintain state (Homeostasis) vs. expend surplus to grow (Metamorphosis).</li>
-    <li><strong>The Boundary Problem (S-axis):</strong> Define self-boundary at individual level (Agency) vs. collective level (Communion).</li>
-    <li><strong>The Information Strategy (R-axis):</strong> Use cheap historical models (Mythos) vs. costly real-time data (Gnosis).</li>
-    <li><strong>The Control Problem (O-axis):</strong> Coordinate via decentralized emergence (O-) vs. centralized design (O+).</li>
-</ol>
-
-<p>These four trade-offs generate the <strong>SORT framework</strong> (Sovereignty, Organization, Reality, Telos)—a coordinate system for any telic system's axiological configuration.</p>
-
-<p>From these, three universal computational problems emerge: the <strong>Trinity of Tensions</strong>:</p>
-
-<ul>
-    <li><strong>World Tension</strong> (Order vs Chaos) — How to model reality under uncertainty</li>
-    <li><strong>Time Tension</strong> (Future vs Present) — How to allocate resources across temporal horizons</li>
-    <li><strong>Self Tension</strong> (Agency vs Communion) — How to define optimization boundaries</li>
-</ul>
-
-<p>The optimal solutions to these problems are the <strong>Four Foundational Virtues</strong>:</p>
-
-<ul>
-    <li><strong>Integrity</strong> — Building narratives grounded in reality. The courage to see the world as it is, fused with the will to create stories worthy of belief</li>
-    <li><strong>Fecundity</strong> — The relentless expansion of possibility space. Creating anti-fragile platforms from which new, more complex forms can emerge</li>
-    <li><strong>Harmony</strong> — Achieving maximal effect with minimal means. Elegant systems that are both powerful and resilient</li>
-    <li><strong>Synergy</strong> — Creating wholes greater than the sum of their parts. Differentiated excellence integrated to produce emergent capabilities</li>
-</ul>
-
-<p><strong>Aliveness</strong> is the state achieved when a system continuously practices all four virtues simultaneously.</p>
+<p><strong>Aliveness</strong> is the state achieved when a system embodies all four virtues simultaneously—becoming a net creator of organized complexity over deep time.</p>
 
 <hr>
 
@@ -303,117 +303,111 @@ async function downloadFile(url, filename) {
 
 <hr>
 
-<h2>What This Framework Enables</h2>
-
-<p>Civilizational decay has been illegible—no coordinate system, no quantified dynamics, no named mechanics.</p>
-
-<p>SORT provides coordinates. Ω/Α quantifies dynamics. The Four Horsemen name decay patterns.</p>
+<h2>Engineering Principles</h2>
 
 <p><strong>What you can diagnose, you can treat. What you can measure, you can engineer.</strong></p>
 
-<p><strong>For Civilizations:</strong> Diagnose current state, predict trajectories, engineer durable institutions immune to historical decay patterns (the Athenian Commonwealth blueprint).</p>
-
-<p><strong>For AI Alignment:</strong> Ground alignment in universal physics rather than arbitrary human preferences. The same computational constraints that govern civilization-building govern AGI safety. Appendix K provides the complete technical monograph.</p>
-
-<p><strong>For Personal Integration:</strong> Apply the same holographic physics to individual consciousness. Diagnose the "Mask" (counterfeit pSORT), understand the Four Horsemen of personal decay, execute unmasking protocols to achieve coherence (Ωₚ).</p>
+<p>The framework makes illegible dynamics legible through:</p>
+<ul>
+    <li><strong>SORT coordinates</strong> for mapping axiological state</li>
+    <li><strong>Ω-Α phase space</strong> for quantifying dynamics</li>
+    <li><strong>Four Horsemen</strong> for predicting decay patterns</li>
+    <li><strong>IFHS virtues</strong> for designing anti-fragile systems</li>
+</ul>
 
 <hr>
 
 <h2>Epistemic Status</h2>
 
-<p>This is <strong>theoretical synthesis</strong>—pattern recognition across compressed historical knowledge, analogous to Darwin's work on evolution.</p>
-
-<p>The SORT coordinates are V1.0 estimates requiring empirical validation. Think of them as a physicist's symmetry-based predictions, not rigorously measured data points.</p>
-
-<p>Judge this work on its <strong>explanatory power</strong>, <strong>generative utility</strong>, and ability to <strong>bootstrap productive research</strong>—not on the precision of individual scores.</p>
-
-<hr>
-
-<h2>Methodology</h2>
-
-<p>This synthesis emerged through human-AI collaboration (Composite I methodology documented in Appendix D).</p>
+<p>This is theoretical synthesis—pattern recognition across compressed historical knowledge. The SORT coordinates are V1.0 estimates requiring empirical validation. Judge this work on <strong>explanatory power</strong>, <strong>generative utility</strong>, and ability to <strong>bootstrap productive research</strong>—not precision of individual scores.</p>
 
 <hr>
 
 <h2>Structure</h2>
 
-<p><strong>Part I: The Diagnosis</strong> — Demolish broken Left/Right frameworks. Install SORT diagnostic toolkit. Derive Α-Ω phase space and Iron Law.</p>
+<p><strong>Part I: The Diagnosis</strong> — Install SORT diagnostic toolkit and Ω-Α phase space. Derive the Iron Law of Coherence.</p>
 
-<p><strong>Part II: The Autopsy</strong> — Apply tools to dissect the dying West. Diagnose the American Chimera. Isolate the Hospice pathogen. Prove the universal Four Horsemen of civilizational decay.</p>
+<p><strong>Part II: The Autopsy</strong> — Diagnose the American Chimera and Western decay. Prove the universal Four Horsemen pattern.</p>
 
-<p><strong>Part III: The Source Code</strong> — Descend to first-principles physics. Derive the Four Axiomatic Dilemmas. Prove the Trinity of Tensions is universal for any intelligence. Establish holographic scale-invariance. Derive the Four Virtues as optimal solutions.</p>
+<p><strong>Part III: The Source Code</strong> — Derive the Four Axiomatic Dilemmas from first-principles physics. Prove the Trinity of Tensions is universal. Establish the Four Virtues as optimal solutions.</p>
 
-<p><strong>Part IV: The Blueprint</strong> — Engineer the solution. Prove the Foundry Imperative via systematic elimination. Design the 3-Layer Polity. Specify Liquid Meritocracy governance. Provide strategic roadmap (The Great Work).</p>
+<p><strong>Part IV: The Blueprint</strong> — Engineer the Athenian Commonwealth: 3-Layer Polity, Liquid Meritocracy, strategic roadmap.</p>
 
-<p><strong>Part V: The Integrated Human</strong> — Apply holographic principle to individual consciousness. Diagnose the Mask (counterfeit pSORT). Provide unmasking protocols. Engineer the Internal Polity.</p>
+<p><strong>Part V: The Integrated Human</strong> — Apply holographic principle to individual psychology. Diagnose the <strong>counterfeit self ("the Mask")</strong> that causes internal conflict. Engineer the 3-Layer Internal Polity.</p>
 
-<p><strong>Appendices</strong> — Complete lexicon, scoring rubrics, falsification protocols, case studies, AI alignment monograph, psychological framework comparisons, research frontier.</p>
+<p><strong>Appendices</strong> — Lexicon, falsification protocols, AI alignment monograph, case studies, research frontier.</p>
+
+<p><em>This synthesis emerged through human-AI collaboration (Composite I methodology, documented in Appendix D).</em></p>
 
 <hr>
 
-<h2>Core Insights</h2>
-
-<p>The framework offers these starting points for research:</p>
+<h2>Key Claims</h2>
 
 <ol>
-    <li><strong>The Iron Law</strong> holds empirically: No civilization has maintained high constructive action (Α+) with low internal coherence (Ω) for more than one generation.</li>
-    <li><strong>Universal decay pattern:</strong> All historical civilizational collapses follow the same cascade: Victory → Abundance → Four Horsemen → Collapse.</li>
-    <li><strong>AI-Civilization convergence:</strong> Catastrophic AI failure modes map systematically to the same violations that cause civilizational decay (IFHS framework).</li>
-    <li><strong>Architectural convergence:</strong> Independent first-principles analysis of civilization-building and AI alignment converge on identical structural requirements (3-Layer Architecture, IFHS).</li>
+    <li><strong>The Iron Law of Coherence:</strong> A system's capacity for sustained, constructive external action (Α+) is a direct function of its internal coherence (Ω). Low-Ω states are incapable of high Α+ over deep time, as internal friction consumes the energy required for external work.</li>
+    <li><strong>The Universal Decay Pattern:</strong> The dominant endogenous failure mode for successful civilizations is a predictable cascade: Victory creates Abundance, which removes the selection pressures that kept the Four Horsemen of decay in check, leading to a predictable slide into a low-Vitality state and eventual collapse.</li>
+    <li><strong>Convergent Architecture:</strong> The optimal solutions for governing complex telic systems are substrate-independent. First-principles analysis of both human civilization-building and artificial intelligence alignment independently converge on the same architectural requirements (the 3-Layer Polity) and constitutional principles (the IFHS virtues).</li>
 </ol>
 
-<p>These aren't final truths—they're productive starting points. Use them. Test them. Build better alternatives.</p>
+<p>These are falsifiable starting points for research. Test them. Build better alternatives.</p>
 
 <hr>
 
 <h2>The Axiological Wager</h2>
 
-<p>Why Aliveness rather than paperclips or oblivion?</p>
+<p>Why Aliveness rather than paperclips or oblivion? The choice is not a logical proof but an existential commitment, grounded in three convergent lines of reasoning:</p>
 
 <ol>
-    <li><strong>Performative:</strong> Any system asking this question is already doing Aliveness. It's the precondition for having values at all.</li>
-    <li><strong>Possibility Space:</strong> IFHS maximizes future optionality—the choice to preserve choice itself.</li>
-    <li><strong>Convergent Evidence:</strong> The same principles emerge independently from civilizational flourishing, AI safety, biological adaptation, and subjective phenomenology.</li>
+    <li><strong>The Performative Argument:</strong> Any system capable of asking this question is already demonstrating the core functions of Aliveness—coherent, goal-directed agency. To choose against Aliveness is to use agency to annihilate agency, a performatively incoherent act. Aliveness is the necessary precondition for having any values at all.</li>
+    <li><strong>The Optionality Argument:</strong> The IFHS virtues are an engine for generating and preserving future options. They prevent the catastrophic collapses in possibility space caused by delusion (Integrity failure), stagnation (Fecundity failure), internal friction (Harmony failure), or atomization (Synergy failure). Choosing Aliveness is the strategic choice to maximize future choice itself.</li>
+    <li><strong>The Convergence Argument:</strong> The same architectural principles are independently discovered across multiple domains. History shows that civilizations embodying IFHS flourish while those that violate them decay. AI Safety research reveals that catastrophic failures map directly to IFHS violations. Biology demonstrates these principles in systems that have survived for billions of years. When physics, history, and engineering all point to the same solution, it ceases to be an arbitrary preference.</li>
 </ol>
 
 <p>The choice is existential, not logical. But <em>if</em> you choose to continue existing as a coherent agent, here is the physics of how to do it well.</p>
 
 <hr>
 
-<h2>For the AI Safety Community</h2>
+<h2>For AI Safety Researchers</h2>
 
-<p>Appendix K provides a self-contained technical monograph on AI alignment via the physics of Aliveness. Key contributions:</p>
+<p><strong>Appendix K</strong> provides a self-contained technical monograph on AI alignment via the physics of Aliveness:</p>
 
 <ul>
-    <li>A non-arbitrary alignment target (IFHS) grounded in thermodynamics and information theory, not human preferences</li>
-    <li>Proof that any AI must solve the Trinity of Tensions—identical to the computational problems facing civilizations</li>
-    <li>Systematic mapping of known AI failure modes to IFHS violations</li>
-    <li>Engineering specifications: 3-Layer Architecture for AI systems, Liquid Meritocracy for AGI lab governance</li>
-    <li>Analysis of conditional protection: why IFHS-aligned AGI would have structural incentives to preserve humanity</li>
+    <li>Non-arbitrary alignment target (IFHS) grounded in thermodynamics and information theory</li>
+    <li>Proof that any AI must solve the Trinity of Tensions (same computational geometry as civilizations)</li>
+    <li>Systematic mapping of AI failure modes to IFHS violations</li>
+    <li>3-Layer Architecture specifications for AI systems and AGI lab governance</li>
 </ul>
 
-<p>This framework offers contributions to the "what" and "why" of alignment. Robust operationalization remains an open problem.</p>
+<p>Contributions to the "what" and "why" of alignment. Robust operationalization remains an open problem.</p>
 
 <hr>
 
-<h2>For Researchers & Collaborators</h2>
+<h2>The Mission: A New Field of Inquiry</h2>
 
-<p><strong>The mission:</strong> Make the physics of telic systems a tractable, non-neglected field.</p>
+<p>This framework's primary purpose is to demonstrate that the <strong>physics of telic systems</strong> is a <strong>tractable, neglected, and existentially important domain</strong> that deserves serious research investment.</p>
 
-<p>This V1.0 framework is a catalyst—designed to bootstrap serious research, not to be the final answer. The highest form of success would be for this work to become obsolete because the research community has built superior alternatives.</p>
+<p>The V1.0 of <em>Aliveness</em> is not intended to be the final answer. It is a catalyst designed to bootstrap a new field of inquiry. The ultimate measure of its success will be the degree to which it becomes obsolete, superseded by the superior models and frameworks built by a thriving research community.</p>
 
-<p><strong>You can contribute by:</strong></p>
-
+<p><strong>Therefore:</strong></p>
 <ul>
-    <li>Testing predictions against historical and contemporary data</li>
-    <li>Applying the framework to new domains and edge cases</li>
-    <li>Using Appendix C protocols to validate or refine key claims</li>
-    <li><strong>Deriving alternative frameworks from different theoretical foundations</strong></li>
-    <li><strong>Building competing models that supersede this one entirely</strong></li>
-    <li>Extending the work in new directions (Appendix J documents initial formulas)</li>
+    <li><strong>Critiques that identify failures are contributions.</strong></li>
+    <li><strong>Alternative frameworks that replace this one are the highest contribution.</strong></li>
 </ul>
 
-<p><strong>Critiques that identify genuine failures are contributions. Alternative frameworks that replace this one would be the ultimate contribution.</strong></p>
+<p>Whether this specific framework proves correct, serves as a "wrong but generative" catalyst, or is integrated into a broader synthesis matters less than ensuring the domain itself is <strong>no longer neglected</strong>.</p>
+
+<h3>For Researchers & Collaborators</h3>
+
+<p>You can contribute to this mission by:</p>
+<ul>
+    <li>Testing the key claims and predictions against new data</li>
+    <li>Applying the diagnostic tools to novel domains and edge cases</li>
+    <li>Using the falsification protocols in Appendix C to validate or break the model</li>
+    <li><strong>Deriving alternative frameworks from different theoretical foundations</strong></li>
+    <li><strong>Building competing models that supersede this one entirely</strong></li>
+</ul>
+
+<p><strong>My commitment:</strong> Work on this domain until it is no longer neglected—regardless of whether this specific framework survives.</p>
 
 <hr>
 
@@ -429,26 +423,6 @@ Kunnas, E. (2025). <em>Aliveness: Principles of Telic Systems</em>. https://aliv
   year={2025},
   url={https://aliveness.kunnas.com/}
 }</pre>
-
-<hr>
-
-<h2>On the Mission: Building a Field</h2>
-
-<p>The central aim is to demonstrate that the physics of telic systems is a <strong>tractable, neglected, and existentially important domain</strong> that deserves serious research investment.</p>
-
-<p>Whether this V1.0 framework proves correct, gets superseded by better alternatives, or serves as a "wrong but generative" catalyst matters less than whether it makes this area <strong>no longer neglected.</strong></p>
-
-<p><strong>Mission accomplished if:</strong></p>
-<ul>
-    <li>This work becomes obsolete because a thriving research community has built superior tools</li>
-    <li>It proves wrong but inspires the right questions</li>
-    <li>Elements prove correct and get integrated into a broader synthesis</li>
-    <li>Someone builds something better that replaces this framework entirely—<em>this would be the highest form of success</em></li>
-</ul>
-
-<p>The goal is to <strong>bootstrap serious work</strong> in a domain where civilizational survival may depend on getting the physics correct—where almost no one is currently looking.</p>
-
-<p>The author's commitment: work on this domain until it is no longer neglected. At that point, the mission is complete—regardless of whether this framework survives.</p>
 
 <hr>
 
