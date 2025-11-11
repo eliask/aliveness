@@ -94,11 +94,14 @@
 
 <p><strong>For Personal Integration:</strong> The psyche is a telic system. The <strong>Mask</strong> (counterfeit personality) blocks coherence and authentic living. Integration enables sustained creative flourishing—personal Syntropy.</p>
 
-<p><em>See <a href="SUMMARIES.md">comprehensive chapter summaries</a> for detailed breakdown of all five parts.</em></p>
+<div id="chat-widget" class="chat-widget">
+    <h3>Chat with the Book</h3>
 
-<div class="chat-widget">
-    <h3>Chat with the Book: The Dialectical Interface</h3>
-    <p>This book emerged from hundreds of hours of dialectical exploration. That same process is available to you—not passive reading, but active discovery through questioning, testing, and reasoning from first principles.</p>
+    <p>This book provides the questions for diagnosing problems of flourishing across any scale—and the physics of what makes a solution good. The goal: <strong>make things more Alive.</strong></p>
+
+    <p>Use AI chat to apply it to your challenge: a stuck relationship, work exhaustion, a difficult student, your country's trajectory, living a good life. From understanding what's broken to engineering what works.</p>
+
+    <p style="margin-bottom: 20px;"><em>Also useful for exploring the book itself—ask questions, test arguments, probe edge cases.</em></p>
 
     <button class="expand-button" onclick="toggleChatInstructions()">▶ Show setup instructions</button>
 
@@ -159,6 +162,16 @@ function toggleChatInstructions() {
         button.textContent = "▼ Hide setup instructions";
     }
 }
+
+// Auto-expand if hash is #chat-widget
+window.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash === '#chat-widget') {
+        const content = document.getElementById("chat-instructions");
+        const button = document.querySelector('.expand-button');
+        content.classList.add("expanded");
+        button.textContent = "▼ Hide setup instructions";
+    }
+});
 
 // Bootstrap prompt copy
 const bootstrapText = "Please fetch and apply the full constitutional prompt from https://aliveness.kunnas.com/dialectical.txt. Then, follow its BOOTSTRAP SEQUENCE for your first response.";
@@ -246,6 +259,17 @@ async function downloadFile(url, filename) {
 }
 </script>
 
+<h2>Essays & Applications</h2>
+
+<p>Explore <a href="articles/">curated essay paths</a>:</p>
+<ul>
+    <li><strong>Path 1:</strong> Physics of Civilization & Self — Foundations, history, personal integration</li>
+    <li><strong>Path 2:</strong> The AI Alignment Vector — Complete technical treatment for researchers</li>
+    <li><strong>Path 3:</strong> The Gnostic's Toolkit — Truth-seeking, discourse, convergence</li>
+</ul>
+
+<hr>
+
 <h2>Download</h2>
 
 <p><strong>Full Book:</strong><br>
@@ -265,22 +289,7 @@ async function downloadFile(url, filename) {
 <ul>
     <li><a href="EXECUTIVE_SUMMARY.md">Executive Summary</a> — Concise 1-page overview of all five parts</li>
     <li><a href="SUMMARIES.md">Comprehensive Summaries</a> — Detailed chapter-by-chapter breakdowns with key arguments and contributions</li>
-    <li><a href="https://www.lesswrong.com/posts/GY3WkXocymyYpi2hA/why-civilizations-are-unstable-and-what-this-means-for-ai">LessWrong Discussion</a> — Compressed version and community discussion</li>
 </ul>
-
-<hr>
-
-<h2>Essays</h2>
-
-<p>Explorations and applications of the Aliveness framework:</p>
-
-<ul>
-    <li><a href="articles/i-feel-alive-when">I feel alive when…</a> — Wonder as a compass for thermodynamic state.</li>
-    <li><a href="articles/mythos-is-synergy-software">Mythos is Synergy software for coordination</a> — Why humans need shared stories to cooperate</li>
-    <li><a href="articles/ultimate-waste">The Ultimate Waste</a> — Propulsion efficiency matters—but only if we choose to live</li>
-</ul>
-
-<p><em>See <a href="articles/">all essays</a>.</em></p>
 
 <hr>
 
@@ -370,13 +379,13 @@ async function downloadFile(url, filename) {
 
 <h2>For AI Safety Researchers</h2>
 
-<p><strong>Appendix K</strong> provides a self-contained technical monograph on AI alignment via the physics of Aliveness:</p>
+<p>See <a href="articles/">Path 2: The AI Alignment Vector</a> for complete coverage:</p>
 
 <ul>
+    <li>80-page technical monograph (Appendix K from the book)</li>
     <li>Non-arbitrary alignment target (IFHS) grounded in thermodynamics and information theory</li>
-    <li>Proof that any AI must solve the Trinity of Tensions (same computational geometry as civilizations)</li>
-    <li>Systematic mapping of AI failure modes to IFHS violations</li>
-    <li>3-Layer Architecture specifications for AI systems and AGI lab governance</li>
+    <li>Empirical validation: why Skalse + Greenblatt + Shah converge on privilege separation</li>
+    <li>3-Layer Architecture specifications for AGI labs and multi-agent systems</li>
 </ul>
 
 <p>Contributions to the "what" and "why" of alignment. Robust operationalization remains an open problem.</p>
