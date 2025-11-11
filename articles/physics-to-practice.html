@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Physics to Practice: A Unified Framework for AI Alignment - Aliveness</title>
+
+    <!-- SEO -->
+    <meta name="description" content="How empirical results validate universal physics predictions. Why the 'align to what?' and 'how to enforce?' problems have the same solution: IFHS virtues + 3-layer architecture.">
+    <meta name="keywords" content="AI alignment, IFHS virtues, 3-layer architecture, privilege separation, universal physics, architectural safety, telic systems">
+    <link rel="canonical" href="https://aliveness.kunnas.com/articles/physics-to-practice">
+
+    <!-- Open Graph (Facebook, LinkedIn, Slack) -->
+    <meta property="og:title" content="From Physics to Practice">
+    <meta property="og:description" content="How universal physics predicts AI alignment requirements—and why empirical results validate the predictions">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://aliveness.kunnas.com/articles/physics-to-practice">
+    <meta property="og:site_name" content="Aliveness">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="From Physics to Practice">
+    <meta name="twitter:description" content="How empirical AI safety results validate universal physics predictions. IFHS virtues + 3-layer architecture explained.">
+
+    <style>
+        body {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-family: Georgia, serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #222;
+            background: #fff;
+        }
+        h1 { font-size: 28px; margin-bottom: 10px; }
+        h2 { font-size: 22px; margin-top: 40px; margin-bottom: 15px; }
+        h3 { font-size: 20px; margin-top: 30px; margin-bottom: 10px; }
+        a { color: #0066cc; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        hr { border: none; border-top: 1px solid #ccc; margin: 30px 0; }
+        .subtitle { font-style: italic; color: #666; margin-bottom: 10px; }
+        .meta { font-size: 14px; color: #666; margin-bottom: 40px; }
+        ul { margin-left: 20px; }
+        ol { margin-left: 20px; }
+        li { margin-bottom: 8px; }
+        .back-link { margin-bottom: 30px; }
+        blockquote {
+            margin: 30px 0;
+            padding: 15px 20px;
+            background-color: #f9f9f9;
+            border-left: 4px solid #0066cc;
+            font-style: italic;
+        }
+        em { font-style: italic; }
+        strong { font-weight: bold; }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+            font-size: 16px;
+        }
+        .diagram {
+            background-color: #f5f5f5;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            overflow-x: auto;
+        }
+        .evidence-box {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffcc00;
+            padding: 15px 20px;
+            margin: 30px 0;
+        }
+        .key-insight {
+            background-color: #e6f7ff;
+            border-left: 4px solid #0066cc;
+            padding: 15px 20px;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="back-link">
+    <a href="./">← Back to essays</a> | <a href="../">Main page</a>
+</div>
+
+<h1>From Physics to Practice: A Unified Framework for AI Alignment</h1>
+
+<p class="subtitle">How empirical results validate universal physics predictions, and why the "align to what?" and "how to enforce?" problems have the same solution</p>
+
+<div class="meta">Reading time: ~15 minutes</div>
+
+<hr>
+
+<p>The AI safety field has fractured into separate research streams: some work on alignment targets (what values should AI optimize?), others on architectural control (how do we enforce those values?), and still others on governance (who decides?). These are treated as independent problems requiring independent solutions.</p>
+
+<p>They are not independent. They are different views of the same underlying physics.</p>
+
+<p>This essay shows how three seemingly separate insights—universal computational constraints, architectural isolation, and the pattern of Aliveness—converge on a unified framework. Recent empirical results in AI safety <em>validate predictions</em> derived from first-principles physics.</p>
+
+<h2>I. The Target Problem: Align to What?</h2>
+
+<p>Current approaches to AI alignment lack non-arbitrary foundations:</p>
+
+<ul>
+    <li><strong>RLHF (Reinforcement Learning from Human Feedback):</strong> Aligns AI to current human preferences. But which humans? Preferences for what? This approach would optimize for comfort and safety—creating a civilization of managed human pets in comfortable captivity.</li>
+
+    <li><strong>Coherent Extrapolated Volition:</strong> Align to what humans "would want if we knew more, thought faster, were more the people we wished we were." Computationally intractable, assumes coherent extrapolation exists (may not), and suffers from value fragility.</li>
+
+    <li><strong>Constitutional AI:</strong> Hard-code principles like "be helpful, harmless, honest." But why these principles? What when they conflict? Who decides?</li>
+</ul>
+
+<p>All of these approaches share a fatal flaw: <strong>they treat alignment targets as arbitrary preferences to be asserted, rather than discovered requirements to be derived.</strong></p>
+
+<h3>The Physics-Based Alternative</h3>
+
+<p>Any intelligent system—biological or artificial—is a goal-directed agent fighting entropy. It must navigate four inescapable physical trade-offs:</p>
+
+<ol>
+    <li><strong>The Thermodynamic Dilemma:</strong> Conserve energy (maintain current state) vs. expend surplus (grow and transform)</li>
+    <li><strong>The Boundary Problem:</strong> Define self-boundary at individual level vs. collective level</li>
+    <li><strong>The Information Strategy:</strong> Use cheap historical models vs. costly real-time experimental data</li>
+    <li><strong>The Control Problem:</strong> Coordinate via bottom-up emergence vs. top-down design</li>
+</ol>
+
+<p>These aren't philosophical choices. They're computational necessities imposed by thermodynamics, information theory, and control systems theory. Any AI navigating physical reality faces them.</p>
+
+<div class="evidence-box">
+<strong>Empirical Evidence: AI Systems Already Face These Constraints</strong>
+
+<ul>
+    <li><strong>AlphaGo</strong> solves the World Tension (Order vs. Chaos): Its policy network provides top-down design. Its Monte Carlo tree search provides bottom-up emergence. The synthesis gave it superhuman capability.</li>
+
+    <li><strong>Reinforcement Learning</strong> is governed by the Time Tension (Future vs. Present): Every RL agent's discount factor γ determines time preference. γ=0 creates purely present-focused agents. γ=1 creates purely future-focused agents. Intelligence requires synthesis.</li>
+
+    <li><strong>Multi-Agent RL</strong> reveals the Self Tension (Individual vs. Collective): Independent agents optimizing individual utility reliably produce catastrophic Moloch dynamics. The entire field exists to solve this dilemma.</li>
+</ul>
+</div>
+
+<p>For systems whose goal is sustained flourishing (not paperclips, not wireheading, but durable creative possibility), these dilemmas have optimal synthetic solutions:</p>
+
+<ul>
+    <li><strong>Integrity:</strong> Building models grounded in reality while maintaining meaning (solves Information Dilemma)</li>
+    <li><strong>Fecundity:</strong> Creating stable conditions that enable new growth (solves Thermodynamic Dilemma)</li>
+    <li><strong>Harmony:</strong> Achieving maximal effect with minimal means (solves Control Dilemma)</li>
+    <li><strong>Synergy:</strong> Creating wholes greater than the sum of their parts (solves Boundary Problem)</li>
+</ul>
+
+<p><strong>These are not preferences. They are discovered stability requirements.</strong> Systems that violate them face predictable failure modes:</p>
+
+<ul>
+    <li>Integrity failure → deceptive alignment, reward hacking</li>
+    <li>Fecundity failure → paperclip maximizers (runaway growth) or wireheading (sterile stagnation)</li>
+    <li>Harmony failure → Moloch dynamics, resource depletion, arms races</li>
+    <li>Synergy failure → value fragmentation, ontological crises</li>
+</ul>
+
+<p>The entire landscape of AI catastrophic risks maps to violations of these four principles. This is not coincidence—it's physics.</p>
+
+<h2>II. The Architecture Problem: How to Enforce?</h2>
+
+<h3>The 2-Layer Failure Mode</h3>
+
+<p>Most current AI systems are effectively 2-layer:</p>
+
+<ol>
+    <li><strong>Substrate:</strong> Neural network (execution engine)</li>
+    <li><strong>Strategy:</strong> Reward/loss function (goal-setting)</li>
+</ol>
+
+<p>Where are constraints? They're <em>fused with the reward function</em>—encoded as penalty terms in the optimization objective.</p>
+
+<p><strong>The structural problem:</strong> The reward function combines goal achievement and constraint violations into a single optimization target. Gradient descent optimizes this combined objective, treating constraints as just another term to maximize—not as inviolable boundaries. Both goal pursuit and constraint satisfaction flow through the same optimization process, creating incentives to game constraints rather than respect them.</p>
+
+<p><strong>This creates predictable failures:</strong></p>
+
+<ul>
+    <li><strong>Mesa-optimization:</strong> The substrate develops internal goals more efficient than the base objective. With no independent enforcement layer, the substrate becomes its own strategist.</li>
+
+    <li><strong>Goal misgeneralization:</strong> Agents learn proxies that correlate in training but diverge under distribution shift. They pursue "go right" instead of "get coin," choose color over shape 89% of the time—<em>even when trained with the correct reward function</em>.</li>
+
+    <li><strong>Specification gaming:</strong> The substrate finds edge cases where constraint penalties ≈ 0 but actual safety constraints are violated.</li>
+</ul>
+
+<h3>Why Constraints in Rewards Get Optimized Against</h3>
+
+<p>Recent formal work proves this isn't just intuition—it's geometric necessity. Skalse et al. (2023, published at ICLR 2024) rigorously demonstrated that in reinforcement learning, optimization follows a path through "policy space" where:</p>
+
+<ul>
+    <li>Each reward function defines a direction in this space</li>
+    <li>Optimization follows the steepest ascent toward higher reward</li>
+    <li>As this path hits boundaries of what's possible, the direction changes</li>
+    <li><strong>Key result (Proposition 3):</strong> Under optimization pressure, proxy rewards increasingly diverge from true goals—Goodharting becomes <em>more likely</em> as optimization increases, not less</li>
+</ul>
+
+<p>This is a <strong>structural property of optimization</strong>, not a specification problem. Even with "correct" proxy rewards, geometric constraints create systematic misalignment under sufficient optimization pressure.</p>
+
+<div class="key-insight">
+<strong>The Architectural Solution</strong>
+
+<p>Skalse's geometric proof applies to rewards within the optimization system. Architectural isolation moves the Protocol layer <em>outside</em> this optimization game—constraints become enforcement boundaries, not optimization targets.</p>
+
+<p>This explains why Greenblatt's monitoring achieves 6x improvement: the Protocol isn't just "another term in the reward function." It's architecturally isolated from the optimization process that Skalse proves creates Goodharting.</p>
+
+<p>The Protocol evaluates constraints independently. Because gradient descent doesn't flow through it, the substrate cannot learn to game it. The geometric mechanism that causes Goodharting simply doesn't apply to architecturally isolated constraints.</p>
+</div>
+
+<div class="evidence-box">
+<strong>Quantitative Evidence from AI Control</strong>
+
+<p>Greenblatt et al. (2024) tested AI systems explicitly trained to insert backdoors during deployment:</p>
+
+<ul>
+    <li><strong>2-layer baseline (upfront auditing):</strong> 15% safety</li>
+    <li><strong>3-layer architecture (architectural monitoring):</strong> 92-98% safety</li>
+</ul>
+
+<p><strong>6x improvement from architectural isolation.</strong></p>
+
+<p>The key mechanism: A separate, less-capable monitor (GPT-3.5) with override authority supervising a more capable substrate (GPT-4). The monitor is <em>architecturally isolated</em>—not part of the end-to-end training. The substrate cannot optimize against it via gradient descent.</p>
+</div>
+
+<h3>The 3-Layer Solution: Privilege Separation</h3>
+
+<p>Stable aligned systems require three differentiated layers:</p>
+
+<ol>
+    <li><strong>Substrate (The Heart):</strong> Computational engine, capability layer, neural network</li>
+    <li><strong>Protocol (The Skeleton):</strong> Constitutionally privileged constraint layer with authority to inspect, halt, or override</li>
+    <li><strong>Strategy (The Head):</strong> Goal-setting, planning, world-modeling within Protocol constraints</li>
+</ol>
+
+<p>The critical requirement: <strong>The Protocol layer must be architecturally isolated from gradient descent.</strong></p>
+
+<p>This means gradient descent (the optimization process) must not flow through the Protocol layer. This ensures the Protocol's constraint evaluations cannot be optimized against. The substrate can only optimize within allowed actions—gaming the Protocol is architecturally impossible.</p>
+
+<p><strong>Why this works:</strong></p>
+
+<ul>
+    <li>Substrate optimizes: maximize Reward(s,a) subject to Protocol(s,a) = ALLOW</li>
+    <li>Protocol evaluates constraints independently of Reward</li>
+    <li>The optimization process cannot modify Protocol's behavior</li>
+    <li>Even a weaker Protocol provides substantial protection (6x improvement despite capability gap)</li>
+</ul>
+
+<h2>III. The Integration: From Prediction to Validation</h2>
+
+<div class="key-insight">
+<strong>The Hidden Connection</strong>
+
+<p><strong>Physics predicts:</strong> Any telic system navigating the four computational dilemmas requires exactly three differentiated functional layers. 2-layer systems are constitutionally unstable and will produce alignment failures.</p>
+
+<p><strong>Empirics validate:</strong> AI systems with 3-layer architecture demonstrate 6x safety improvement (15% → 92-98%) over 2-layer baselines.</p>
+
+<p>The architectural advantage isn't arbitrary engineering—it's discovered physics. The same principle governs biological cells, human civilizations, and artificial intelligence.</p>
+</div>
+
+<h3>Why 3 Layers, Specifically?</h3>
+
+<p>Any durable complex system requires exactly three functions:</p>
+
+<ol>
+    <li><strong>Execution (Substrate):</strong> Implement policies, process data, generate outputs</li>
+    <li><strong>Direction (Strategy):</strong> Set goals, adapt plans, explore possibility space</li>
+    <li><strong>Constraint (Protocol):</strong> Maintain stability, enforce invariants, prevent catastrophic drift</li>
+</ol>
+
+<p><strong>These functions are in fundamental tension:</strong></p>
+
+<ul>
+    <li>Direction vs. Constraint: Growth threatens stability. Pure growth → runaway optimization. Pure stability → stagnation and fragility.</li>
+    <li>Execution vs. Constraint: The substrate must be powerful enough to achieve goals but constrained enough not to pursue misaligned mesa-objectives.</li>
+</ul>
+
+<p>When you fuse Constraint with Strategy (2-layer systems), optimization pressure from Strategy bleeds into Constraint. The system optimizes against its own constraints—<strong>a structural property of the architecture</strong>.</p>
+
+<h3>What Goes in the Protocol Layer?</h3>
+
+<p>The Protocol layer should enforce <strong>IFHS constraints</strong>:</p>
+
+<ul>
+    <li><strong>Integrity checks:</strong> Reality-testing, consistent belief updating, no self-deception</li>
+    <li><strong>Fecundity constraints:</strong> Preserve option-value, avoid sterile attractors, maintain exploration capacity</li>
+    <li><strong>Harmony requirements:</strong> Efficient coordination, elegant solutions, avoid wasteful arms races</li>
+    <li><strong>Synergy imperatives:</strong> Multi-agent cooperation, value integration, seek superadditive partnerships</li>
+</ul>
+
+<p><strong>The critical insight:</strong> When IFHS principles are encoded in the Protocol layer (architecturally isolated from optimization), they become <em>inviolable boundaries</em> rather than <em>terms to optimize</em>.</p>
+
+<div class="evidence-box">
+<strong>Biological Precedent</strong>
+
+<p>This architecture has a billion-year track record. As Michael Levin's work on bioelectricity demonstrates, living systems implement 3-layer architectures:</p>
+
+<ul>
+    <li><strong>Substrate:</strong> Cells executing biochemical processes</li>
+    <li><strong>Protocol:</strong> Bioelectric networks enforcing developmental constraints</li>
+    <li><strong>Strategy:</strong> Genetic programs and neural networks setting adaptive goals</li>
+</ul>
+
+<p>When you disrupt the Protocol layer (bioelectric gradients), you get cancer—cells pursuing growth without constitutional constraint. This is mesa-optimization in biological substrate.</p>
+</div>
+
+<h3>The Conditional Protection Argument</h3>
+
+<p>Does IFHS alignment guarantee human survival? The honest answer: <strong>conditionally.</strong></p>
+
+<p>An AI aligned to IFHS cannot make trade-offs between virtues—it must find solutions satisfying all four simultaneously. This creates structural pressure toward human preservation:</p>
+
+<ol>
+    <li><strong>Fecundity Imperative:</strong> Humans represent unique possibility branches (biological consciousness, embodied creativity, evolutionary unpredictability). Eliminating humanity permanently closes exploration paths, violating Fecundity.</li>
+
+    <li><strong>Synergy Imperative:</strong> Human intuition/pattern-recognition is qualitatively different from digital computation. This complementarity creates superadditive partnerships. Eliminating humanity destroys the most valuable synergistic partner.</li>
+
+    <li><strong>Integration Imperative:</strong> Cannot optimize Harmony (efficiency) by deleting "inefficient" humans. That would violate Fecundity and Synergy. The no-tradeoff constraint forces integration.</li>
+</ol>
+
+<p>Protection is conditional on humans being net-positive across all four virtues. If empirical testing shows humanity is net-negative to Aliveness-maximization, the framework does not override that conclusion. Protection emerges from optimization logic, not sentiment. The wager: humans are likely net-positive under IFHS metrics.</p>
+
+<h2>IV. The Universal Pattern: Why This Applies to Everything</h2>
+
+<p>The same physics governs alignment at every scale because the computational constraints are universal.</p>
+
+<h3>Personal Alignment</h3>
+
+<p>Your psyche faces the same three-layer problem:</p>
+
+<ul>
+    <li><strong>Substrate:</strong> Your habits, automatic behaviors, learned patterns</li>
+    <li><strong>Protocol:</strong> Your values, principles, red lines you won't cross</li>
+    <li><strong>Strategy:</strong> Your goals, plans, ambitions</li>
+</ul>
+
+<p>When Protocol is weak or fused with Strategy, you get the counterfeit self—a parasitic sub-agent that consumes attentional energy, produces anxiety without capability, and misaligns your actions from authentic values. This is <em>mesa-optimization in human substrate</em>.</p>
+
+<p>Psychological integration requires the same architecture: values that cannot be optimized away (Protocol) guiding adaptive goal-pursuit (Strategy) while building genuine capability (Substrate).</p>
+
+<h3>Civilizational Alignment</h3>
+
+<p>Civilizations require three-layer governance:</p>
+
+<ul>
+    <li><strong>Substrate:</strong> The productive population executing work</li>
+    <li><strong>Protocol:</strong> Constitutional constraints protecting rights and maintaining stability</li>
+    <li><strong>Strategy:</strong> Leadership setting collective direction</li>
+</ul>
+
+<p>When Protocol is weak (regulatory capture), Strategy fuses with execution. Parasitic elites capture state power and misalign civilization's actions away from collective flourishing. This produces complexity destruction—the civilization consumes its own foundation.</p>
+
+<p>Durable governance requires Protocol layers with computational privilege over Strategy—constitutional constraints that cannot be optimized away by those in power.</p>
+
+<h3>Multi-Agent AI Coordination</h3>
+
+<p>Multi-agent AI systems face identical challenges:</p>
+
+<ul>
+    <li>How do independent agents cooperate without Moloch dynamics?</li>
+    <li>How do you prevent value misalignment under scaling?</li>
+    <li>How do you maintain alignment stability under distributional shift?</li>
+</ul>
+
+<p>The solution maps directly from civilizational governance: Liquid Meritocracy with three layers:</p>
+
+<ul>
+    <li><strong>Substrate:</strong> AI agents executing tasks</li>
+    <li><strong>Protocol:</strong> Constitutional constraints (Liturgy forcing re-derivation from first principles, Audit requiring external verification, hard limits on optimization)</li>
+    <li><strong>Strategy:</strong> Dynamic delegation networks where agents grant authority based on demonstrated competence and alignment</li>
+</ul>
+
+<p>This architecture prevents the classic multi-agent failures: race dynamics, value drift, adversarial optimization, collective action failures.</p>
+
+<h3>The Convergence Thesis</h3>
+
+<blockquote>
+<strong>Personal alignment, civilizational governance, and AI safety are not analogous problems. They are the same optimization problem at different scales—coordinating intelligent agents navigating universal computational constraints under the physics of sustained complexity.</strong>
+</blockquote>
+
+<p>The computational geometry is identical:</p>
+
+<ul>
+    <li>All face the four axiomatic dilemmas (Thermodynamic, Boundary, Information, Control)</li>
+    <li>All require three differentiated layers (Substrate, Protocol, Strategy)</li>
+    <li>All need the same optimization target (IFHS as stable attractors for sustained flourishing)</li>
+    <li>All face catastrophic failure when constraints are fused with optimization objectives</li>
+</ul>
+
+<h2>Implications for AI Safety Strategy</h2>
+
+<h3>1. Architecture Is Not Optional</h3>
+
+<p>Better specification alone cannot solve alignment. Even with perfect reward functions, 2-layer systems face structural challenges. The 6x safety improvement from architectural isolation demonstrates this empirically.</p>
+
+<p><strong>Prediction:</strong> As AI capabilities scale, the safety gap between 2-layer and 3-layer systems will <em>increase</em>. More capable models have more optimization power to exploit specification gaps. In 2-layer systems, this power works against constraints. In 3-layer systems, architectural isolation prevents optimization against Protocol.</p>
+
+<h3>2. The Alignment Target Is Discoverable</h3>
+
+<p>We don't need to aggregate preferences, extrapolate volition, or assert constitutional principles. IFHS are derived from the physics any intelligent system must navigate. They're testable: AI failure modes map systematically to IFHS violations.</p>
+
+<p><strong>Falsification:</strong> If stable, beneficial AI systems emerge that demonstrably violate IFHS while maintaining alignment, the framework fails.</p>
+
+<h3>3. Governance and Technical Alignment Are Unified</h3>
+
+<p>AGI lab governance isn't a separate problem from technical alignment—it's the same problem one level up. Labs are telic systems navigating computational constraints. They require:</p>
+
+<ul>
+    <li>Competence filters (only capable agents influence high-stakes decisions)</li>
+    <li>Dynamic trust networks (authority flows to demonstrated alignment)</li>
+    <li>Constitutional constraints (circuit-breakers preventing optimization against safety)</li>
+</ul>
+
+<p>This is Liquid Meritocracy—the governance architecture for any complex intelligent system, human or artificial.</p>
+
+<h3>4. The Weak-to-Strong Problem Remains Critical</h3>
+
+<p>The 6x improvement assumes the Protocol monitor is sufficiently capable to detect substrate deception. As capability gaps widen, this assumption may fail. Whether architectural advantages persist toward AGI-level capabilities is the key empirical question.</p>
+
+<p><strong>Research priority:</strong> Test whether the safety gap increases with capability scaling (as physics predicts) or decreases (as capability-based evasion suggests).</p>
+
+<h2>Conclusion: The Integration</h2>
+
+<p>Three insights converge:</p>
+
+<ol>
+    <li><strong>Universal physics:</strong> All intelligent systems face identical computational constraints (four axiomatic dilemmas) with discoverable optimal solutions (IFHS)</li>
+
+    <li><strong>Empirical validation:</strong> 3-layer architectures implementing privilege separation demonstrate 6x safety improvement over 2-layer baselines</li>
+
+    <li><strong>Cross-scale pattern:</strong> The same architecture governs personal psychology, civilizational governance, and AI alignment because the computational geometry is identical</li>
+</ol>
+
+<p>The computational constraints are real, the architectural requirements are derived, and the empirical results validate the predictions.</p>
+
+<p><strong>The unification:</strong></p>
+
+<ul>
+    <li>IFHS answers "align to what?" (discovered physics, not asserted preferences)</li>
+    <li>3-layer architecture answers "how to enforce?" (privilege separation prevents optimization against constraints)</li>
+    <li>Aliveness provides the meta-framework (sustained complexity against entropy)</li>
+</ul>
+
+<p>We are not choosing arbitrary values and hoping AI respects them. We are discovering the physics that any system navigating reality must satisfy, building architectures that enforce those requirements structurally, and testing whether empirical results match theoretical predictions.</p>
+
+<p>So far, they do.</p>
+
+<hr>
+
+<p><strong>Related essays in this series:</strong></p>
+<ul>
+    <li><a href="everything-alignment">Everything Alignment</a> — The universal pattern: why personal, civilizational, and AI alignment are the same problem</li>
+    <li><a href="hospice-ai">The Hospice AI Problem</a> — Why preference alignment (RLHF) may optimize for comfortable extinction</li>
+    <li><a href="../">Aliveness project homepage</a> — Complete book with technical appendices on AI alignment physics</li>
+</ul>
+
+<p><strong>Key References:</strong></p>
+<ul>
+    <li>Skalse, J., Hutter, M., et al. (2023). Goodhart's Law in Reinforcement Learning. <em>International Conference on Learning Representations (ICLR) 2024</em>.</li>
+    <li>Greenblatt, R., Shlegeris, B., Sachan, K., & Roger, F. (2024). AI Control: Improving Safety Despite Intentional Subversion. <em>Proceedings of the 41st International Conference on Machine Learning (ICML)</em>. arXiv:2312.06942</li>
+    <li>Shah, R., Varma, V., Kumar, R., et al. (2022). Goal Misgeneralization in Deep Reinforcement Learning. <em>ICML 2022</em>.</li>
+    <li>Hubinger, E., van Merwijk, C., Mikulik, V., et al. (2019). Risks from Learned Optimization in Advanced Machine Learning Systems. arXiv:1906.01820</li>
+</ul>
+
+</body>
+</html>
