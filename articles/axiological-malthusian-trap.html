@@ -22,174 +22,7 @@
     <meta name="twitter:title" content="The Axiological Malthusian Trap">
     <meta name="twitter:description" content="Why successful civilizations cease transforming and growing: thermodynamics, not resources. Explains Rome, Britain, USA—and the Fermi Paradox.">
 
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Georgia, serif;
-            font-size: 18px;
-            line-height: 1.8;
-            color: #222;
-            background: #fff;
-        }
-        .page-container {
-            display: flex;
-            max-width: 1400px;
-            margin: 0 auto;
-            justify-content: center;
-        }
-        .sidebar {
-            width: 250px;
-            position: sticky;
-            top: 20px;
-            height: fit-content;
-            max-height: calc(100vh - 40px);
-            overflow-y: auto;
-            padding: 20px;
-            margin-right: 40px;
-            border-right: 1px solid #ddd;
-        }
-        .sidebar-nav {
-            font-size: 14px;
-            line-height: 1.6;
-        }
-        .sidebar-nav a {
-            display: block;
-            padding: 6px 0;
-            color: #666;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .sidebar-nav a:hover {
-            color: #0066cc;
-        }
-        .sidebar-nav a.active {
-            color: #0066cc;
-            font-weight: bold;
-            border-left: 3px solid #0066cc;
-            padding-left: 10px;
-            margin-left: -10px;
-        }
-        .sidebar-nav .section-h2 {
-            font-weight: bold;
-            margin-top: 15px;
-            font-size: 15px;
-        }
-        .sidebar-nav .section-h3 {
-            padding-left: 15px;
-            font-size: 13px;
-        }
-        .main-content {
-            max-width: 900px;
-            margin: 40px 0;
-            padding: 0 40px;
-        }
-        @media (max-width: 1200px) {
-            .sidebar {
-                display: none;
-            }
-            .main-content {
-                padding: 0 20px;
-            }
-        }
-        h1 { font-size: 32px; margin-bottom: 10px; line-height: 1.3; }
-        h2 { font-size: 26px; margin-top: 50px; margin-bottom: 20px; border-top: 2px solid #ccc; padding-top: 30px; }
-        h3 { font-size: 22px; margin-top: 35px; margin-bottom: 15px; }
-        h4 { font-size: 20px; margin-top: 25px; margin-bottom: 10px; font-weight: bold; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        hr { border: none; border-top: 1px solid #ccc; margin: 40px 0; }
-        .subtitle { font-style: italic; color: #666; margin-bottom: 10px; font-size: 20px; }
-        .meta { font-size: 14px; color: #666; margin-bottom: 40px; }
-        ul { margin-left: 20px; }
-        ol { margin-left: 20px; }
-        li { margin-bottom: 10px; }
-        .back-link { margin-bottom: 30px; }
-        blockquote {
-            margin: 30px 0;
-            padding: 15px 20px;
-            background-color: #f9f9f9;
-            border-left: 4px solid #0066cc;
-            font-style: italic;
-        }
-        em { font-style: italic; }
-        strong { font-weight: bold; }
-        code {
-            background-color: #f5f5f5;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: monospace;
-            font-size: 16px;
-        }
-        pre {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-            font-family: monospace;
-            font-size: 14px;
-            line-height: 1.4;
-        }
-        table {
-            border-collapse: collapse;
-            width: 100%;
-            margin: 25px 0;
-            font-size: 16px;
-        }
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
-        th {
-            background-color: #f0f0f0;
-            font-weight: bold;
-        }
-        .key-box {
-            background-color: #fff9e6;
-            border-left: 4px solid #ffcc00;
-            padding: 20px;
-            margin: 30px 0;
-        }
-        .evidence-box {
-            background-color: #e6f7ff;
-            border-left: 4px solid #0066cc;
-            padding: 20px;
-            margin: 30px 0;
-        }
-        .warning-box {
-            background-color: #ffe6e6;
-            border-left: 4px solid #cc0000;
-            padding: 20px;
-            margin: 30px 0;
-        }
-        .convergence-box {
-            background-color: #e8f5e9;
-            border-left: 4px solid #4caf50;
-            padding: 20px;
-            margin: 30px 0;
-        }
-        sup {
-            font-size: 0.8em;
-            vertical-align: super;
-        }
-        .figure {
-            margin: 35px 0;
-            text-align: center;
-        }
-        .figure img {
-            max-width: 100%;
-            height: auto;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .figure-caption {
-            margin-top: 10px;
-            font-size: 15px;
-            color: #666;
-            font-style: italic;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
     <script>
         // Smooth scroll and active section tracking
         document.addEventListener('DOMContentLoaded', function() {
@@ -304,6 +137,10 @@
 </ol>
 
 <p>This essay provides the physics of how Moloch kills civilizations: through game-theoretic gradients + thermodynamic stability → non-expansive equilibria.</p>
+
+<div style="background-color: #f0f8ff; padding: 20px; margin: 25px 0; border-left: 4px solid #0066cc;">
+<p><strong>Mechanism Deep Dive:</strong> For a complete treatment of how Moloch, Goodhart's Law, and Inadequate Equilibria are three perspectives on one thermodynamic mechanism—with quantitative validation from Rome to modern AI systems—see <strong><a href="physics-of-moloch">The Physics of Moloch: A Unified Theory of Coordination Failure</a></strong>.</p>
+</div>
 
 <h3>The Universal Law</h3>
 

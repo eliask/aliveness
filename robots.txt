@@ -1,0 +1,10 @@
+# robots.txt for aliveness.kunnas.com
+User-agent: *
+Allow: /
+
+# Unnecessary since repo available anyway
+Disallow: /src/
+Disallow: /.git/
+
+# Sitemap
+Sitemap: https://aliveness.kunnas.com/sitemap.xml

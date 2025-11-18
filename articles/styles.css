@@ -1,0 +1,590 @@
+/* Common styles for all articles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #222;
+    background: #fff;
+}
+
+/* Simple centered layout (for pages without .page-container) */
+body:not(:has(.page-container)) {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Layout container for sidebar + content */
+.page-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+/* Sidebar navigation */
+.sidebar {
+    width: 250px;
+    position: sticky;
+    top: 20px;
+    height: fit-content;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: 20px;
+    margin-right: 40px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar-nav {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.sidebar-nav a {
+    display: block;
+    padding: 6px 0;
+    color: #666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.sidebar-nav a:hover {
+    color: #0066cc;
+}
+
+.sidebar-nav a.active {
+    color: #0066cc;
+    font-weight: bold;
+    border-left: 3px solid #0066cc;
+    padding-left: 10px;
+    margin-left: -10px;
+}
+
+.sidebar-nav .section-h2 {
+    font-weight: bold;
+    margin-top: 15px;
+    font-size: 15px;
+}
+
+.sidebar-nav .section-h3 {
+    padding-left: 15px;
+    font-size: 13px;
+}
+
+/* Main content area */
+.main-content {
+    max-width: 900px;
+    margin: 40px 0;
+    padding: 0 40px;
+    flex: 1;
+}
+
+/* Simple layout for pages without sidebar */
+.simple-layout {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 1200px) {
+    .sidebar {
+        display: none;
+    }
+    .main-content {
+        margin: 20px auto;
+        padding: 0 20px;
+    }
+    .page-container {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    body:not(:has(.page-container)) {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    .main-content {
+        margin: 10px auto;
+        padding: 0 15px;
+    }
+    .simple-layout {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+}
+
+/* Typography */
+h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+/* Smaller h1 for simple layouts */
+body:not(:has(.page-container)) h1 {
+    font-size: 28px;
+}
+
+h2 {
+    font-size: 26px;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    border-top: 2px solid #ccc;
+    padding-top: 30px;
+}
+
+/* Simpler h2 for simple layouts */
+body:not(:has(.page-container)) h2 {
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 15px;
+    border-top: none;
+    padding-top: 0;
+}
+
+h3 {
+    font-size: 22px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+}
+
+body:not(:has(.page-container)) h3 {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+h4 {
+    font-size: 20px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 26px; }
+    h2 { font-size: 22px; margin-top: 35px; padding-top: 20px; }
+    h3 { font-size: 19px; margin-top: 25px; }
+    h4 { font-size: 18px; margin-top: 20px; }
+}
+
+/* Links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Horizontal rule */
+hr {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 40px 0;
+}
+
+body:not(:has(.page-container)) hr {
+    margin: 30px 0;
+}
+
+/* Text elements */
+.subtitle {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.meta {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+/* Lists */
+ul {
+    margin-left: 20px;
+}
+
+ol {
+    margin-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+/* Navigation */
+.back-link {
+    margin-bottom: 30px;
+}
+
+/* Blockquotes */
+blockquote {
+    margin: 30px 0;
+    padding: 15px 20px;
+    background-color: #f9f9f9;
+    border-left: 4px solid #0066cc;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    blockquote {
+        margin: 20px 0;
+        padding: 10px 15px;
+    }
+}
+
+/* Inline code and emphasis */
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+code {
+    background-color: #f5f5f5;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: monospace;
+    font-size: 16px;
+}
+
+pre {
+    background-color: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    pre {
+        padding: 10px;
+        font-size: 13px;
+    }
+}
+
+/* Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 25px 0;
+    font-size: 16px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+    th, td {
+        padding: 8px;
+    }
+}
+
+/* Content boxes */
+.key-box {
+    background-color: #fff9e6;
+    border-left: 4px solid #ffcc00;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.evidence-box {
+    background-color: #e6f7ff;
+    border-left: 4px solid #0066cc;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.warning-box {
+    background-color: #ffe6e6;
+    border-left: 4px solid #cc0000;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.convergence-box {
+    background-color: #e8f5e9;
+    border-left: 4px solid #4caf50;
+    padding: 20px;
+    margin: 30px 0;
+}
+
+.scenario-box {
+    background-color: #f5f5f5;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 4px solid #666;
+}
+
+.diagnostic-box {
+    background-color: #fff9f0;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 4px solid #cc6600;
+}
+
+@media (max-width: 768px) {
+    .key-box, .evidence-box, .warning-box, .convergence-box,
+    .scenario-box, .diagnostic-box {
+        padding: 12px 15px;
+        margin: 20px 0;
+    }
+}
+
+/* Figures and images */
+sup {
+    font-size: 0.8em;
+    vertical-align: super;
+}
+
+.figure {
+    margin: 35px 0;
+    text-align: center;
+}
+
+.figure img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.figure-caption {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #666;
+    font-style: italic;
+}
+
+@media (max-width: 768px) {
+    .figure {
+        margin: 25px 0;
+    }
+    .figure-caption {
+        font-size: 14px;
+    }
+}
+
+/* Additional CSS classes from various articles */
+
+.article-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.article-desc {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.article-meta {
+    font-size: 14px;
+    color: #999;
+}
+
+.calculation-box {
+    background-color: #f5f5f5;
+    padding: 15px 20px;
+    border-left: 4px solid #666;
+    margin: 20px 0;
+}
+
+.collapsible-section {
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.collapsible-header {
+    background-color: #f5f5f5;
+    padding: 12px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    user-select: none;
+}
+
+.collapsible-content {
+    display: none;
+    padding: 15px;
+    background-color: #fafafa;
+}
+
+.diagram {
+    background-color: #f5f5f5;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 5px;
+    font-family: monospace;
+    font-size: 14px;
+    line-height: 1.4;
+    overflow-x: auto;
+    white-space: pre;
+}
+
+.epistemic-status {
+    background-color: #f5f5f5;
+    border-left: 4px solid #999;
+    padding: 15px 20px;
+    margin: 30px 0;
+    font-size: 16px;
+}
+
+.example-box {
+    background-color: #f9f9f9;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 4px solid #666;
+}
+
+.express-track {
+    background-color: #fffacd;
+    border-left: 4px solid #ffa500;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.formula {
+    background-color: #e6f3ff;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: "Courier New", monospace;
+}
+
+.hero-quote {
+    background-color: #e8f4f8;
+    border-left: 5px solid #0066cc;
+    padding: 20px 25px;
+    margin: 30px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.key-claim {
+    background-color: #f0f8ff;
+    border-left: 4px solid #0066cc;
+    padding: 20px;
+    margin: 30px 0;
+    font-size: 19px;
+}
+
+.key-insight {
+    background-color: #e6f7ff;
+    border-left: 4px solid #0066cc;
+    padding: 15px 20px;
+    margin: 30px 0;
+}
+
+.meta-box {
+    background-color: #f0f8ff;
+    padding: 20px;
+    margin: 30px 0;
+    border-left: 4px solid #0066cc;
+}
+
+.mode-box {
+    background-color: #f5f5f5;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 4px solid #666;
+}
+
+.physics-box {
+    background-color: #fff9f0;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-left: 4px solid #cc6600;
+}
+
+.reading-guide {
+    background-color: #f0f8ff;
+    border: 1px solid #0066cc;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 5px;
+}
+
+.reading-guide h3 {
+    margin-top: 0;
+    color: #0066cc;
+}
+
+.read-more {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 35px 0;
+    font-size: 16px;
+}
+
+.read-more h3 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.toc {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 30px 0;
+    border: 1px solid #ddd;
+}
+
+.toc h3 {
+    margin-top: 0;
+}
+
+.toc ul {
+    margin-bottom: 0;
+}
+
+.toc a {
+    color: #0066cc;
+}
+
+.who-why-what {
+    background-color: #f0f8ff;
+    border-left: 4px solid #0066cc;
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-size: 17px;
+}
+
+@media (max-width: 768px) {
+    .epistemic-status, .key-insight, .express-track, .hero-quote,
+    .key-claim, .meta-box, .physics-box, .who-why-what,
+    .example-box, .mode-box {
+        padding: 12px 15px;
+        margin: 20px 0;
+        font-size: 16px;
+    }
+}
