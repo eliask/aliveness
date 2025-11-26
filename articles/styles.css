@@ -1,3 +1,87 @@
+/* CSS Variables - Light mode defaults */
+:root {
+    --bg: #fff;
+    --text: #222;
+    --text-muted: #666;
+    --text-faint: #999;
+    --border: #ddd;
+    --border-strong: #ccc;
+    --link: #0066cc;
+
+    /* Surfaces */
+    --surface: #f5f5f5;
+    --surface-alt: #f9f9f9;
+    --surface-raised: #f0f0f0;
+
+    /* Semantic colors */
+    --accent: #0066cc;
+    --accent-bg: #e6f7ff;
+    --accent-bg-alt: #f0f8ff;
+    --accent-bg-light: #e8f4f8;
+
+    --warning: #cc0000;
+    --warning-bg: #ffe6e6;
+
+    --success: #4caf50;
+    --success-bg: #e8f5e9;
+
+    --highlight: #ffcc00;
+    --highlight-bg: #fff9e6;
+
+    --orange: #cc6600;
+    --orange-bg: #fff9f0;
+    --orange-alt: #ffa500;
+    --orange-bg-alt: #fffacd;
+
+    /* Table */
+    --th-bg: #f0f0f0;
+
+    /* Boxes */
+    --box-neutral: #666;
+    --box-neutral-bg: #f5f5f5;
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #1a1a1a;
+        --text: #e0e0e0;
+        --text-muted: #aaa;
+        --text-faint: #888;
+        --border: #444;
+        --border-strong: #444;
+        --link: #6bb3ff;
+
+        --surface: #2a2a2a;
+        --surface-alt: #252525;
+        --surface-raised: #333;
+
+        --accent: #6bb3ff;
+        --accent-bg: #1a2a3a;
+        --accent-bg-alt: #1a2a3a;
+        --accent-bg-light: #1a2a3a;
+
+        --warning: #ff6666;
+        --warning-bg: #3a1a1a;
+
+        --success: #66cc66;
+        --success-bg: #1a3a1a;
+
+        --highlight: #d4a800;
+        --highlight-bg: #3a3520;
+
+        --orange: #e68a00;
+        --orange-bg: #3a2a1a;
+        --orange-alt: #e68a00;
+        --orange-bg-alt: #3a3520;
+
+        --th-bg: #333;
+
+        --box-neutral: #888;
+        --box-neutral-bg: #2a2a2a;
+    }
+}
+
 /* Common styles for all articles */
 body {
     margin: 0;
@@ -5,8 +89,8 @@ body {
     font-family: Georgia, serif;
     font-size: 18px;
     line-height: 1.8;
-    color: #222;
-    background: #fff;
+    color: var(--text);
+    background: var(--bg);
 }
 
 /* Simple centered layout (for pages without .page-container) */
@@ -34,7 +118,7 @@ body:not(:has(.page-container)) {
     overflow-y: auto;
     padding: 20px;
     margin-right: 40px;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid var(--border);
 }
 
 .sidebar-nav {
@@ -45,19 +129,19 @@ body:not(:has(.page-container)) {
 .sidebar-nav a {
     display: block;
     padding: 6px 0;
-    color: #666;
+    color: var(--text-muted);
     text-decoration: none;
     transition: color 0.2s;
 }
 
 .sidebar-nav a:hover {
-    color: #0066cc;
+    color: var(--link);
 }
 
 .sidebar-nav a.active {
-    color: #0066cc;
+    color: var(--link);
     font-weight: bold;
-    border-left: 3px solid #0066cc;
+    border-left: 3px solid var(--link);
     padding-left: 10px;
     margin-left: -10px;
 }
@@ -137,7 +221,7 @@ h2 {
     font-size: 26px;
     margin-top: 50px;
     margin-bottom: 20px;
-    border-top: 2px solid #ccc;
+    border-top: 2px solid var(--border-strong);
     padding-top: 30px;
 }
 
@@ -178,7 +262,7 @@ h4 {
 
 /* Links */
 a {
-    color: #0066cc;
+    color: var(--link);
     text-decoration: none;
 }
 
@@ -189,7 +273,7 @@ a:hover {
 /* Horizontal rule */
 hr {
     border: none;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid var(--border-strong);
     margin: 40px 0;
 }
 
@@ -200,14 +284,14 @@ body:not(:has(.page-container)) hr {
 /* Text elements */
 .subtitle {
     font-style: italic;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 10px;
     font-size: 20px;
 }
 
 .meta {
     font-size: 14px;
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 40px;
 }
 
@@ -233,8 +317,8 @@ li {
 blockquote {
     margin: 30px 0;
     padding: 15px 20px;
-    background-color: #f9f9f9;
-    border-left: 4px solid #0066cc;
+    background-color: var(--surface-alt);
+    border-left: 4px solid var(--accent);
     font-style: italic;
 }
 
@@ -255,7 +339,7 @@ strong {
 }
 
 code {
-    background-color: #f5f5f5;
+    background-color: var(--surface);
     padding: 2px 6px;
     border-radius: 3px;
     font-family: monospace;
@@ -263,7 +347,7 @@ code {
 }
 
 pre {
-    background-color: #f5f5f5;
+    background-color: var(--surface);
     padding: 15px;
     border-radius: 5px;
     overflow-x: auto;
@@ -288,13 +372,14 @@ table {
 }
 
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     padding: 12px;
     text-align: left;
+    color: var(--text);
 }
 
 th {
-    background-color: #f0f0f0;
+    background-color: var(--th-bg);
     font-weight: bold;
 }
 
@@ -309,45 +394,45 @@ th {
 
 /* Content boxes */
 .key-box {
-    background-color: #fff9e6;
-    border-left: 4px solid #ffcc00;
+    background-color: var(--highlight-bg);
+    border-left: 4px solid var(--highlight);
     padding: 20px;
     margin: 30px 0;
 }
 
 .evidence-box {
-    background-color: #e6f7ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--accent-bg);
+    border-left: 4px solid var(--accent);
     padding: 20px;
     margin: 30px 0;
 }
 
 .warning-box {
-    background-color: #ffe6e6;
-    border-left: 4px solid #cc0000;
+    background-color: var(--warning-bg);
+    border-left: 4px solid var(--warning);
     padding: 20px;
     margin: 30px 0;
 }
 
 .convergence-box {
-    background-color: #e8f5e9;
-    border-left: 4px solid #4caf50;
+    background-color: var(--success-bg);
+    border-left: 4px solid var(--success);
     padding: 20px;
     margin: 30px 0;
 }
 
 .scenario-box {
-    background-color: #f5f5f5;
+    background-color: var(--surface);
     padding: 15px 20px;
     margin: 20px 0;
-    border-left: 4px solid #666;
+    border-left: 4px solid var(--box-neutral);
 }
 
 .diagnostic-box {
-    background-color: #fff9f0;
+    background-color: var(--orange-bg);
     padding: 15px 20px;
     margin: 20px 0;
-    border-left: 4px solid #cc6600;
+    border-left: 4px solid var(--orange);
 }
 
 @media (max-width: 768px) {
@@ -372,14 +457,14 @@ sup {
 .figure img {
     max-width: 100%;
     height: auto;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     border-radius: 5px;
 }
 
 .figure-caption {
     margin-top: 10px;
     font-size: 15px;
-    color: #666;
+    color: var(--text-muted);
     font-style: italic;
 }
 
@@ -401,30 +486,30 @@ sup {
 }
 
 .article-desc {
-    color: #666;
+    color: var(--text-muted);
     margin-bottom: 5px;
 }
 
 .article-meta {
     font-size: 14px;
-    color: #999;
+    color: var(--text-faint);
 }
 
 .calculation-box {
-    background-color: #f5f5f5;
+    background-color: var(--surface);
     padding: 15px 20px;
-    border-left: 4px solid #666;
+    border-left: 4px solid var(--box-neutral);
     margin: 20px 0;
 }
 
 .collapsible-section {
     margin: 20px 0;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
     border-radius: 4px;
 }
 
 .collapsible-header {
-    background-color: #f5f5f5;
+    background-color: var(--surface);
     padding: 12px 15px;
     cursor: pointer;
     font-weight: bold;
@@ -435,11 +520,11 @@ sup {
 .collapsible-content {
     display: none;
     padding: 15px;
-    background-color: #fafafa;
+    background-color: var(--surface-alt);
 }
 
 .diagram {
-    background-color: #f5f5f5;
+    background-color: var(--surface);
     padding: 20px;
     margin: 30px 0;
     border-radius: 5px;
@@ -451,38 +536,38 @@ sup {
 }
 
 .epistemic-status {
-    background-color: #f5f5f5;
-    border-left: 4px solid #999;
+    background-color: var(--surface);
+    border-left: 4px solid var(--text-faint);
     padding: 15px 20px;
     margin: 30px 0;
     font-size: 16px;
 }
 
 .example-box {
-    background-color: #f9f9f9;
+    background-color: var(--surface-alt);
     padding: 15px 20px;
     margin: 20px 0;
-    border-left: 4px solid #666;
+    border-left: 4px solid var(--box-neutral);
 }
 
 .express-track {
-    background-color: #fffacd;
-    border-left: 4px solid #ffa500;
+    background-color: var(--orange-bg-alt);
+    border-left: 4px solid var(--orange-alt);
     padding: 15px 20px;
     margin: 20px 0;
     font-size: 16px;
 }
 
 .formula {
-    background-color: #e6f3ff;
+    background-color: var(--accent-bg);
     padding: 2px 6px;
     border-radius: 3px;
     font-family: "Courier New", monospace;
 }
 
 .hero-quote {
-    background-color: #e8f4f8;
-    border-left: 5px solid #0066cc;
+    background-color: var(--accent-bg-light);
+    border-left: 5px solid var(--accent);
     padding: 20px 25px;
     margin: 30px 0;
     font-size: 20px;
@@ -491,44 +576,54 @@ sup {
 }
 
 .key-claim {
-    background-color: #f0f8ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--accent-bg-alt);
+    border-left: 4px solid var(--accent);
     padding: 20px;
     margin: 30px 0;
     font-size: 19px;
 }
 
 .key-insight {
-    background-color: #e6f7ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--accent-bg);
+    border-left: 4px solid var(--accent);
     padding: 15px 20px;
     margin: 30px 0;
+}
+
+.key-insight h2,
+.key-insight h3,
+.key-box h3,
+.evidence-box h3,
+.scenario-box h3 {
+    margin-top: 0 !important;
+    border: none;
+    padding-top: 0;
 }
 
 .meta-box {
-    background-color: #f0f8ff;
+    background-color: var(--accent-bg-alt);
     padding: 20px;
     margin: 30px 0;
-    border-left: 4px solid #0066cc;
+    border-left: 4px solid var(--accent);
 }
 
 .mode-box {
-    background-color: #f5f5f5;
+    background-color: var(--surface);
     padding: 15px 20px;
     margin: 20px 0;
-    border-left: 4px solid #666;
+    border-left: 4px solid var(--box-neutral);
 }
 
 .physics-box {
-    background-color: #fff9f0;
+    background-color: var(--orange-bg);
     padding: 15px 20px;
     margin: 20px 0;
-    border-left: 4px solid #cc6600;
+    border-left: 4px solid var(--orange);
 }
 
 .reading-guide {
-    background-color: #f0f8ff;
-    border: 1px solid #0066cc;
+    background-color: var(--accent-bg-alt);
+    border: 1px solid var(--accent);
     padding: 20px;
     margin: 30px 0;
     border-radius: 5px;
@@ -536,12 +631,12 @@ sup {
 
 .reading-guide h3 {
     margin-top: 0;
-    color: #0066cc;
+    color: var(--accent);
 }
 
 .read-more {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
+    background-color: var(--surface-alt);
+    border: 1px solid var(--border);
     padding: 20px;
     margin: 35px 0;
     font-size: 16px;
@@ -553,10 +648,10 @@ sup {
 }
 
 .toc {
-    background-color: #f9f9f9;
+    background-color: var(--surface-alt);
     padding: 20px;
     margin: 30px 0;
-    border: 1px solid #ddd;
+    border: 1px solid var(--border);
 }
 
 .toc h3 {
@@ -568,12 +663,12 @@ sup {
 }
 
 .toc a {
-    color: #0066cc;
+    color: var(--link);
 }
 
 .who-why-what {
-    background-color: #f0f8ff;
-    border-left: 4px solid #0066cc;
+    background-color: var(--accent-bg-alt);
+    border-left: 4px solid var(--accent);
     padding: 15px 20px;
     margin: 20px 0;
     font-size: 17px;
