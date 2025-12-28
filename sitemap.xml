@@ -37,12 +37,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://aliveness.kunnas.com/articles/consciousness-architecture</loc>
-    <lastmod>2025-12-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://aliveness.kunnas.com/articles/copenhagen-trap</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -97,6 +91,12 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://aliveness.kunnas.com/articles/macro-magisterium</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aliveness.kunnas.com/articles/mythos-is-synergy-software</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -122,12 +122,6 @@
   </url>
   <url>
     <loc>https://aliveness.kunnas.com/articles/physics-to-practice</loc>
-    <lastmod>2025-12-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aliveness.kunnas.com/articles/polity-of-mind</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -176,12 +170,6 @@
   </url>
   <url>
     <loc>https://aliveness.kunnas.com/articles/the-gnostic-convergence</loc>
-    <lastmod>2025-12-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aliveness.kunnas.com/articles/the-green-hospice</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -248,12 +236,6 @@
   </url>
   <url>
     <loc>https://aliveness.kunnas.com/articles/veil-of-ignorance</loc>
-    <lastmod>2025-12-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://aliveness.kunnas.com/articles/what-depression-is</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
