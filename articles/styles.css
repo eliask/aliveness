@@ -594,7 +594,8 @@ sup {
 .key-insight h3,
 .key-box h3,
 .evidence-box h3,
-.scenario-box h3 {
+.scenario-box h3,
+.diagnostic-box h3 {
     margin-top: 0 !important;
     border: none;
     padding-top: 0;
