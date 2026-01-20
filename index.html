@@ -28,6 +28,37 @@
     </script>
 
     <style>
+        /* CSS Variables - congruent with styles.css */
+        :root {
+            --bg: #fff;
+            --text: #222;
+            --text-muted: #666;
+            --text-faint: #999;
+            --border: #ddd;
+            --border-strong: #ccc;
+            --link: #0066cc;
+            --link-hover: #004c99;
+            --surface: #f5f5f5;
+            --surface-alt: #f9f9f9;
+            --accent: #0066cc;
+            --accent-bg-alt: #f0f8ff;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a1a;
+                --text: #e0e0e0;
+                --text-muted: #aaa;
+                --text-faint: #888;
+                --border: #444;
+                --border-strong: #444;
+                --link: #6bb3ff;
+                --link-hover: #8ec5ff;
+                --surface: #2a2a2a;
+                --surface-alt: #252525;
+                --accent: #6bb3ff;
+                --accent-bg-alt: #1a2a3a;
+            }
+        }
         body {
             max-width: 800px;
             margin: 40px auto;
@@ -35,43 +66,43 @@
             font-family: Georgia, serif;
             font-size: 18px;
             line-height: 1.8;
-            color: #222;
-            background: #fff;
+            color: var(--text);
+            background: var(--bg);
         }
         h1 { font-size: 28px; margin-bottom: 10px; }
         h2 { font-size: 22px; margin-top: 40px; margin-bottom: 15px; }
         h3 { font-size: 20px; margin-top: 30px; margin-bottom: 10px; }
-        a { color: #0066cc; text-decoration: none; }
+        a { color: var(--link); text-decoration: none; }
         a:hover { text-decoration: underline; }
-        hr { border: none; border-top: 1px solid #ccc; margin: 30px 0; }
-        .subtitle { font-style: italic; color: #666; margin-bottom: 40px; }
+        hr { border: none; border-top: 1px solid var(--border-strong); margin: 30px 0; }
+        .subtitle { font-style: italic; color: var(--text-muted); margin-bottom: 40px; }
         ul { margin-left: 20px; }
         li { margin-bottom: 8px; }
         .chat-widget {
-            border: 1px solid #ddd;
-            background-color: #f9f9f9;
+            border: 1px solid var(--border);
+            background-color: var(--surface-alt);
             padding: 20px;
             margin-top: 40px;
             margin-bottom: 40px;
         }
         .chat-widget h3 { margin-top: 0; }
         .prompt-box {
-            background-color: #fff;
-            border: 1px solid #ccc;
+            background-color: var(--bg);
+            border: 1px solid var(--border-strong);
             padding: 15px;
             font-family: monospace;
             font-size: 14px;
             line-height: 1.6;
-            white-space: pre-wrap; /* Allows wrapping */
+            white-space: pre-wrap;
             word-wrap: break-word;
             margin-bottom: 15px;
         }
-        .copy-button:hover { background-color: #004c99; }
+        .copy-button:hover { background-color: var(--link-hover); }
         .ai-links a { margin-right: 15px; }
-        .action-button{display:inline-block;padding:10px 18px;background-color:#0066cc;color:#fff;border:none;cursor:pointer;font-size:14px;border-radius:4px;font-family:sans-serif;margin-right:10px;margin-bottom:10px;text-decoration:none}
-        .action-button:hover{background-color:#004c99;color:#fff;text-decoration:none}
-        .secondary-action{background-color:#e9e9e9;color:#333}
-        .secondary-action:hover{background-color:#d1d1d1;color:#333}
+        .action-button{display:inline-block;padding:10px 18px;background-color:var(--accent);color:#fff;border:none;cursor:pointer;font-size:14px;border-radius:4px;font-family:sans-serif;margin-right:10px;margin-bottom:10px;text-decoration:none}
+        .action-button:hover{background-color:var(--link-hover);color:#fff;text-decoration:none}
+        .secondary-action{background-color:var(--surface);color:var(--text)}
+        .secondary-action:hover{background-color:var(--border-strong);color:var(--text)}
         .copy-status{ font-family:sans-serif; font-size:14px; color:green; display:inline-block; opacity:0; transition:opacity .1s ease-in-out; }
         #bootstrap-prompt{ user-select: all; }
         .collapsible-content { display: none; margin-top: 15px; }
@@ -79,14 +110,14 @@
         .expand-button {
             background: none;
             border: none;
-            color: #0066cc;
+            color: var(--link);
             cursor: pointer;
             font-size: 16px;
             text-decoration: underline;
             padding: 0;
             font-family: Georgia, serif;
         }
-        .expand-button:hover { color: #004c99; }
+        .expand-button:hover { color: var(--link-hover); }
     </style>
 </head>
 <body>
@@ -95,42 +126,57 @@
 
 <p class="subtitle">A physics-based framework for diagnosing and engineering telic systems—from civilizations to artificial intelligence to the self.</p>
 
-<blockquote style="font-size: 20px; margin: 40px 0; padding: 20px 30px; background-color: #f0f8ff; border-left: 4px solid #0066cc;">
+<blockquote style="font-size: 20px; margin: 40px 0; padding: 20px 30px; background-color: var(--accent-bg-alt); border-left: 4px solid var(--accent);">
 <strong>Aliveness is the capacity of a telic system to generate and sustain negentropic potential over deep time.</strong>
 </blockquote>
 
-<p>A <strong>telic system</strong> is any goal-directed agent that imposes its own order on the world—a virus hijacking a cell, a beaver engineering an ecosystem, a civilization building an empire, an AI pursuing a goal. These systems are defined by their <em>net effect on the organized complexity of their environment</em>: whether they are net destroyers (Parasites), net preservers (Autotrophs), or net creators (Syntropes).</p>
+<hr>
+
+<h2>Start Here</h2>
+
+<div style="background: var(--accent-bg-alt); padding: 20px; margin: 20px 0; border-left: 4px solid var(--accent);">
+<strong style="font-size: 20px;"><a href="articles/the-question-nobody-asks">The Question Nobody Asks</a></strong>
+<p style="margin: 10px 0 0 0;">Philosophers debated ethics for 3000 years. Nobody asked what physics requires for complex systems to persist. One page. Everything else is application.</p>
+</div>
+
+<p><strong>The Foundation Series:</strong></p>
+<ol>
+<li><a href="articles/the-question-nobody-asks"><strong>The Question</strong></a> — What does physics require for complex systems to persist?</li>
+<li><a href="articles/only-selection"><strong>Only Selection</strong></a> — Evolution, markets, science, culture, AI—one mechanism on different substrates</li>
+<li><a href="articles/the-four-axiomatic-dilemmas"><strong>The Four Axiomatic Dilemmas</strong></a> — The complete physics: four constraints any telic system must navigate</li>
+</ol>
+
+<p><strong>The Complete Synthesis:</strong> <a href="articles/axiological-malthusian-trap">The Axiological Malthusian Trap</a> — Why the galaxy is silent, why civilizations collapse, and how AI alignment is the same problem. (45 min read, or see the <a href="articles/why-no-one-is-colonizing-space">800-word summary</a>)</p>
 
 <hr>
 
-<p>The rise and fall of civilizations, the alignment of artificial intelligence, and the flourishing of individual consciousness are scale-invariant manifestations of the same underlying physics. Any intelligent system must navigate four inescapable physical dilemmas. The solutions it chooses determine its trajectory.</p>
+<h2>Explore by Interest</h2>
 
-<p>Until now, civilizational decay has been illegible—patterns without coordinates, dynamics without measurement. This framework provides the diagnostic tools to make decay legible and therefore engineerable.</p>
+<p>50+ essays across <a href="articles/">six curated paths</a>:</p>
+
+<ul>
+<li><strong><a href="articles/#path-1">The Foundations</a></strong> — First-principles physics of telic systems</li>
+<li><strong><a href="articles/#path-2">Why Civilizations Fail</a></strong> — The universal decay pattern and the Fermi Paradox</li>
+<li><strong><a href="articles/#path-3">Institutional Diagnostics</a></strong> — Why specific political, legal, and economic architectures fail</li>
+<li><strong><a href="articles/#path-4">The Gnostic's Toolkit</a></strong> — Thinking clearly in a confused world</li>
+<li><strong><a href="articles/#path-5">The Integrated Self</a></strong> — Personal application: burnout, anxiety, meaning, how to live</li>
+<li><strong><a href="articles/#path-6">AI Alignment</a></strong> — Complete physics-based alternative to current alignment paradigms</li>
+</ul>
 
 <hr>
 
-<h2>What This Enables</h2>
-
-<p><strong>For Civilizations:</strong> Diagnose current state, predict trajectories, engineer durable institutions immune to historical decay patterns.</p>
-
-<p><strong>For AI Alignment:</strong> Ground alignment in universal physics rather than arbitrary human preferences. The same computational constraints that govern civilization-building govern AGI safety.</p>
-
-<p><strong>For Personal Integration:</strong> The psyche is a telic system. The <strong>Mask</strong> (counterfeit personality) blocks coherence and authentic living. Integration enables sustained creative flourishing—personal Syntropy.</p>
-
-<div style="background: #f0f8ff; padding: 20px; margin: 25px 0; border-left: 4px solid #0066cc;">
+<div style="background: var(--accent-bg-alt); padding: 20px; margin: 25px 0; border-left: 4px solid var(--accent);">
 <strong style="font-size: 18px;"><a href="foundry">The Foundry</a></strong><br>
-<span style="color: #666; font-style: italic;">Where you melt down the Mask and forge the self</span>
-<p style="margin-top: 10px; margin-bottom: 0;"><strong>Start here if you want answers, not theory.</strong> Why am I exhausted despite sleeping? Why do we keep having the same fight? Why do I feel empty after achieving everything? These questions have structural answers that normal advice misses. See sample conversations, then run your own session. <a href="foundry">Enter The Foundry →</a></p>
+<span style="color: var(--text-muted); font-style: italic;">Apply the framework to your life</span>
+<p style="margin-top: 10px; margin-bottom: 0;">Why am I exhausted despite sleeping? Why do we keep having the same fight? Why do I feel empty after achieving everything? A different prompt optimized for personal questions—structural answers instead of generic advice. <a href="foundry">Enter The Foundry →</a></p>
 </div>
 
 <div id="chat-widget" class="chat-widget">
-    <h3>Chat with the Book</h3>
+    <h3>Explore the Book with AI</h3>
 
-    <p>This book provides the questions for diagnosing problems of flourishing across any scale—and the physics of what makes a solution good. The goal: <strong>make things more Alive.</strong></p>
+    <p>Use AI to understand the framework: test arguments, probe edge cases, ask "what does SORT mean?", challenge claims, explore connections between essays.</p>
 
-    <p>Use AI chat to apply it to your challenge: a stuck relationship, work exhaustion, a difficult student, your country's trajectory, living a good life. From understanding what's broken to engineering what works.</p>
-
-    <p style="margin-bottom: 20px;"><em>Also useful for exploring the book itself—ask questions, test arguments, probe edge cases.</em></p>
+    <p style="margin-bottom: 20px;"><em>Same book, different prompt than The Foundry—this one is tuned for intellectual exploration rather than personal application.</em></p>
 
     <button class="expand-button" onclick="toggleChatInstructions()">▶ Show setup instructions</button>
 
@@ -143,12 +189,12 @@
 
     <p style="margin-top: 20px; margin-bottom: 15px;"><strong>Step 2: Choose your platform</strong></p>
 
-    <div style="background-color: #f0f8ff; padding: 15px; margin-bottom: 15px; border-left: 4px solid #0066cc;">
+    <div style="background-color: var(--accent-bg-alt); padding: 15px; margin-bottom: 15px; border-left: 4px solid var(--accent);">
         <strong>🏆 Recommended: <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a></strong> (Gemini 2.5 Flash/Pro)<br>
         <small>Free tier available • 1M+ context • Best overall experience</small><br><br>
         <strong>Method A:</strong> Upload files to chat<br>
         <small style="display: block; margin-left: 20px; margin-top: 5px; margin-bottom: 8px;">
-        1. Start chat with: <code style="background: #e8e8e8; padding: 2px 6px; border-radius: 3px; user-select: all;">Please apply the full constitutional prompt below. Then, follow its BOOTSTRAP SEQUENCE for your first response.</code><br>
+        1. Start chat with: <code style="background: var(--surface); padding: 2px 6px; border-radius: 3px; user-select: all;">Please apply the full constitutional prompt below. Then, follow its BOOTSTRAP SEQUENCE for your first response.</code><br>
         2. Upload both downloaded TXT files (dialectical prompt first, then book)<br>
         3. Send the message
         </small>
@@ -158,7 +204,7 @@
         <small style="display: block; margin-top: 5px;"><em>Combines bootstrap + dialectical prompt + full book (~1.2MB) then paste into AI Studio<br>⚠️ NOT compatible with gemini.google.com or Gemini mobile app — use Method A instead</em></small>
     </div>
 
-    <div style="background-color: #f9f9f9; padding: 15px; margin-bottom: 15px; border-left: 4px solid #666;">
+    <div style="background-color: var(--surface-alt); padding: 15px; margin-bottom: 15px; border-left: 4px solid var(--text-muted);">
         <strong>Alternative: Other providers with 1M+ context</strong><br>
         <small>Any AI platform with 1M+ context window (e.g., Claude has 1M window in limited beta, OpenRouter, etc.)</small><br><br>
         <strong>Method A:</strong> Upload files to chat<br>
@@ -170,13 +216,13 @@
         <span id="copy-status-bootstrap" class="copy-status">Copied!</span>
         <small style="display: block; margin-left: 20px; margin-top: 8px; margin-bottom: 8px;">
         Paste this prompt and send (AI will fetch dialectical prompt + book automatically):<br>
-        <code style="background: #e8e8e8; padding: 2px 6px; border-radius: 3px; user-select: all; font-size: 11px;">Please fetch and apply the full constitutional prompt from https://aliveness.kunnas.com/dialectical.txt. Then, follow its BOOTSTRAP SEQUENCE for your first response.</code>
+        <code style="background: var(--surface); padding: 2px 6px; border-radius: 3px; user-select: all; font-size: 11px;">Please fetch and apply the full constitutional prompt from https://aliveness.kunnas.com/dialectical.txt. Then, follow its BOOTSTRAP SEQUENCE for your first response.</code>
         </small>
     </div>
 
     <small><em>You are using your own AI account. <strong>1M+ context window models strongly recommended</strong> (e.g. Gemini 2.5 Flash/Pro in AI Studio).</em></small>
 
-    <p style="margin-top: 15px; font-size: 14px; color: #666;"><strong>Privacy note:</strong> Free AI Studio may use your data for training. If that matters: enable billing (you can still use free quota) or use API access for full privacy. For personal exploration, the tradeoff is usually fine — but don't paste passwords, financial details, or anything legally sensitive.</p>
+    <p style="margin-top: 15px; font-size: 14px; color: var(--text-muted);"><strong>Privacy note:</strong> Free AI Studio may use your data for training. If that matters: enable billing (you can still use free quota) or use API access for full privacy. For personal exploration, the tradeoff is usually fine — but don't paste passwords, financial details, or anything legally sensitive.</p>
     </div>
 </div>
 
@@ -290,187 +336,58 @@ async function downloadFile(url, filename) {
 }
 </script>
 
-<h2>Essays & Applications</h2>
-
-<p><strong>Start here:</strong> <a href="articles/the-question-nobody-asks">The Question Nobody Asks</a> — What does physics require for complex systems to persist?</p>
-
-<p>Explore <a href="articles/">curated essay paths</a>:</p>
-<ul>
-    <li><strong>Path 1:</strong> The Foundations — First-principles physics of telic systems</li>
-    <li><strong>Path 2:</strong> Why Civilizations Fail — The universal decay pattern</li>
-    <li><strong>Path 3:</strong> Institutional Diagnostics — Why specific architectures fail</li>
-    <li><strong>Path 4:</strong> The Gnostic's Toolkit — Thinking clearly in a confused world</li>
-    <li><strong>Path 5:</strong> The Integrated Self — Personal application: how to live</li>
-    <li><strong>Path 6:</strong> AI Alignment — Complete technical treatment for researchers</li>
-</ul>
-
-<p><strong>See also:</strong> <a href="solutions">Framework Implications</a> — What longstanding problems in ethics, political science, AI alignment, psychology, and cosmology look like through the framework's lens.</p>
-
-<hr>
-
 <h2>Download</h2>
 
-<p><strong>Full Book:</strong><br>
-<a href="Aliveness__Principles_of_Telic_Systems.pdf">Aliveness: Principles of Telic Systems</a> (PDF, 1.7 MB, 820 pages)</p>
+<p><a href="Aliveness__Principles_of_Telic_Systems.pdf"><strong>Full Book (PDF)</strong></a> — 820 pages, 1.7 MB</p>
 
-<p><strong>Individual Parts:</strong></p>
-<ul>
-    <li><a href="Part1_The_Diagnosis.pdf">Part I: The Diagnosis</a> (166 KB, 70 pages) — The broken compass • SORT framework • System dynamics</li>
-    <li><a href="Part2_The_Autopsy.pdf">Part II: The Autopsy</a> (176 KB, 71 pages) — The American Chimera • Hospice axiology • Four Horsemen of decay</li>
-    <li><a href="Part3_The_Source_Code.pdf">Part III: The Source Code</a> (443 KB, 190 pages) — Physics of Aliveness • Trinity of Tensions • Holographic synthesis</li>
-    <li><a href="Part4_The_Blueprint.pdf">Part IV: The Blueprint</a> (303 KB, 125 pages) — Foundry imperative • 3-Layer Polity • Liquid Meritocracy • The Great Work</li>
-    <li><a href="Part5_The_Integrated_Human.pdf">Part V: The Integrated Human</a> (167 KB, 64 pages) — Physics of the self • The Mask • 3-Layer Internal Polity</li>
-    <li><a href="Appendices.pdf">Appendices</a> (656 KB, 296 pages) — 13 appendices in 3 parts: The Canonical Reference • The Applied Praxis • The Research Frontier</li>
+<details>
+<summary style="cursor: pointer; color: var(--link);">Individual parts & resources</summary>
+<ul style="margin-top: 10px;">
+    <li><a href="Part1_The_Diagnosis.pdf">Part I: The Diagnosis</a> (70 pages) — SORT framework, system dynamics</li>
+    <li><a href="Part2_The_Autopsy.pdf">Part II: The Autopsy</a> (71 pages) — Hospice axiology, Four Horsemen</li>
+    <li><a href="Part3_The_Source_Code.pdf">Part III: The Source Code</a> (190 pages) — Physics of Aliveness, Trinity of Tensions</li>
+    <li><a href="Part4_The_Blueprint.pdf">Part IV: The Blueprint</a> (125 pages) — 3-Layer Polity, Liquid Meritocracy</li>
+    <li><a href="Part5_The_Integrated_Human.pdf">Part V: The Integrated Human</a> (64 pages) — The Mask, internal integration</li>
+    <li><a href="Appendices.pdf">Appendices</a> (296 pages) — AI alignment monograph, case studies, research frontier</li>
+    <li><a href="EXECUTIVE_SUMMARY.md">Executive Summary</a> | <a href="SUMMARIES.md">Chapter Summaries</a></li>
 </ul>
-
-<p><strong>Additional Resources:</strong></p>
-<ul>
-    <li><a href="EXECUTIVE_SUMMARY.md">Executive Summary</a> — Concise 1-page overview of all five parts</li>
-    <li><a href="SUMMARIES.md">Comprehensive Summaries</a> — Detailed chapter-by-chapter breakdowns with key arguments and contributions</li>
-</ul>
+</details>
 
 <hr>
 
-<h2>Core Thesis</h2>
+<details>
+<summary style="cursor: pointer; font-size: 20px; font-weight: bold;">About the Framework</summary>
 
-<p>Any goal-directed system must navigate <strong><a href="articles/the-four-axiomatic-dilemmas">Four Axiomatic Dilemmas</a></strong> imposed by thermodynamics, game theory, and information theory. These generate the SORT coordinate system and three universal computational problems (the Trinity of Tensions).</p>
+<div style="margin-top: 20px;">
 
-<p>The optimal solutions are the <strong><a href="articles/the-four-axiomatic-dilemmas">Four Foundational Virtues</a> (IFHS)</strong>: <strong>Integrity</strong> (synthesis of Mythos & Gnosis), <strong>Fecundity</strong> (synthesis of Homeostasis & Metamorphosis), <strong>Harmony</strong> (synthesis of Emergence & Design), and <strong>Synergy</strong> (synthesis of Agency & Communion).</p>
+<h3>Core Thesis</h3>
 
-<p><strong>Aliveness</strong> is the state achieved when a system embodies all four virtues simultaneously—becoming a net creator of organized complexity over deep time.</p>
+<p>Any goal-directed system must navigate <strong>Four Axiomatic Dilemmas</strong> imposed by thermodynamics, game theory, and information theory. The optimal solutions are the <strong>Four Foundational Virtues (IFHS)</strong>: Integrity, Fecundity, Harmony, Synergy. <strong>Aliveness</strong> is the state achieved when a system embodies all four—becoming a net creator of organized complexity over deep time.</p>
 
-<hr>
+<h3>The Iron Law of Coherence</h3>
 
-<h2>The Iron Law of Coherence</h2>
+<p>A system with low internal coherence (Ω) cannot produce sustained constructive action (Α+). Internal conflict consumes the energy required for external work. This operates at all scales: civilizations, organizations, AI systems, individual psyches.</p>
 
-<p>A system with low internal coherence (Ω) cannot produce sustained constructive action (Α+).</p>
-
-<p>This is logical necessity. Internal conflict consumes the energy required for external work. Synergy is the precondition for Syntropy.</p>
-
-<p>This law operates at all scales: civilizations, organizations, AI systems, individual psyches.</p>
-
-<hr>
-
-<h2>Engineering Principles</h2>
-
-<p><strong>What you can diagnose, you can treat. What you can measure, you can engineer.</strong></p>
-
-<p>The framework makes illegible dynamics legible through:</p>
-<ul>
-    <li><strong>SORT coordinates</strong> for mapping axiological state</li>
-    <li><strong>Ω-Α phase space</strong> for quantifying dynamics</li>
-    <li><strong>Four Horsemen</strong> for predicting decay patterns</li>
-    <li><strong>IFHS virtues</strong> for designing anti-fragile systems</li>
-</ul>
-
-<hr>
-
-<h2>Epistemic Status</h2>
-
-<p>This is theoretical synthesis—pattern recognition across compressed historical knowledge. The SORT coordinates are V1.0 estimates requiring empirical validation. Judge this work on <strong>explanatory power</strong>, <strong>generative utility</strong>, and ability to <strong>bootstrap productive research</strong>—not precision of individual scores.</p>
-
-<hr>
-
-<h2>Structure</h2>
-
-<p><strong>Part I: The Diagnosis</strong> — Install SORT diagnostic toolkit and Ω-Α phase space. Derive the Iron Law of Coherence.</p>
-
-<p><strong>Part II: The Autopsy</strong> — Diagnose the American Chimera and Western decay. Prove the universal Four Horsemen pattern.</p>
-
-<p><strong>Part III: The Source Code</strong> — Derive the Four Axiomatic Dilemmas from first-principles physics. Prove the Trinity of Tensions is universal. Establish the Four Virtues as optimal solutions.</p>
-
-<p><strong>Part IV: The Blueprint</strong> — Engineer the Athenian Commonwealth: 3-Layer Polity, Liquid Meritocracy, strategic roadmap.</p>
-
-<p><strong>Part V: The Integrated Human</strong> — Apply holographic principle to individual psychology. Diagnose the <strong>counterfeit self ("the Mask")</strong> that causes internal conflict. Engineer the 3-Layer Internal Polity.</p>
-
-<p><strong>Appendices</strong> — Lexicon, falsification protocols, AI alignment monograph, case studies, research frontier.</p>
-
-<p><em>This synthesis emerged through human-AI collaboration (Composite I methodology, documented in Appendix D).</em></p>
-
-<hr>
-
-<h2>Key Claims</h2>
+<h3>Key Claims (Falsifiable)</h3>
 
 <ol>
-    <li><strong>The Iron Law of Coherence:</strong> A system's capacity for sustained, constructive external action (Α+) is a direct function of its internal coherence (Ω). Low-Ω states are incapable of high Α+ over deep time, as internal friction consumes the energy required for external work.</li>
-    <li><strong>The Universal Decay Pattern:</strong> The dominant endogenous failure mode for successful civilizations is a predictable cascade: Victory creates Abundance, which removes the selection pressures that kept the Four Horsemen of decay in check, leading to a predictable slide into a low-Vitality state and eventual collapse.</li>
-    <li><strong>Convergent Architecture:</strong> The optimal solutions for governing complex telic systems are substrate-independent. First-principles analysis of both human civilization-building and artificial intelligence alignment independently converge on the same architectural requirements (the 3-Layer Polity) and constitutional principles (the IFHS virtues).</li>
+    <li><strong>Iron Law:</strong> Capacity for constructive action is a function of internal coherence</li>
+    <li><strong>Universal Decay:</strong> Victory → Abundance → removed selection pressure → Four Horsemen → collapse</li>
+    <li><strong>Convergent Architecture:</strong> Human civilization and AI alignment independently require the same 3-Layer Polity and IFHS virtues</li>
 </ol>
 
-<p>These are falsifiable starting points for research. Test them. Build better alternatives.</p>
+<h3>For AI Safety Researchers</h3>
 
-<hr>
+<p>See <a href="articles/#path-6">Path 6: AI Alignment</a>: 80-page technical monograph, non-arbitrary alignment target grounded in thermodynamics, empirical validation (Skalse + Greenblatt + Shah → privilege separation), 3-Layer Architecture specifications.</p>
 
-<h2>The Axiological Wager</h2>
+<h3>The Mission</h3>
 
-<p>Why Aliveness rather than paperclips or oblivion? The choice is not a logical proof but an existential commitment, grounded in three convergent lines of reasoning:</p>
+<p>Demonstrate that <strong>physics of telic systems</strong> is a tractable, neglected, existentially important domain. This V1.0 is a catalyst to bootstrap a new field. Critiques are contributions. Alternative frameworks that replace this one are the highest contribution.</p>
 
-<ol>
-    <li><strong>The Performative Argument:</strong> Any system capable of asking this question is already demonstrating the core functions of Aliveness—coherent, goal-directed agency. To choose against Aliveness is to use agency to annihilate agency, a performatively incoherent act. Aliveness is the necessary precondition for having any values at all.</li>
-    <li><strong>The Optionality Argument:</strong> The IFHS virtues are an engine for generating and preserving future options. They prevent the catastrophic collapses in possibility space caused by delusion (Integrity failure), stagnation (Fecundity failure), internal friction (Harmony failure), or atomization (Synergy failure). Choosing Aliveness is the strategic choice to maximize future choice itself.</li>
-    <li><strong>The Convergence Argument:</strong> The same architectural principles are independently discovered across multiple domains. History shows that civilizations embodying IFHS flourish while those that violate them decay. AI Safety research reveals that catastrophic failures map directly to IFHS violations. Biology demonstrates these principles in systems that have survived for billions of years. When physics, history, and engineering all point to the same solution, it ceases to be an arbitrary preference.</li>
-</ol>
+<p><em>Epistemic status: Theoretical synthesis, V1.0 estimates requiring empirical validation. Judge on explanatory power and generative utility.</em></p>
 
-<p>The choice is existential, not logical. But <em>if</em> you choose to continue existing as a coherent agent, here is the physics of how to do it well.</p>
-
-<hr>
-
-<h2>For AI Safety Researchers</h2>
-
-<p>See <a href="articles/">Path 2: The AI Alignment Vector</a> for complete coverage:</p>
-
-<ul>
-    <li>80-page technical monograph (Appendix K from the book)</li>
-    <li>Non-arbitrary alignment target (IFHS) grounded in thermodynamics and information theory</li>
-    <li>Empirical validation: why Skalse + Greenblatt + Shah converge on privilege separation</li>
-    <li>3-Layer Architecture specifications for AGI labs and multi-agent systems</li>
-</ul>
-
-<p>Contributions to the "what" and "why" of alignment. Robust operationalization remains an open problem.</p>
-
-<hr>
-
-<h2>The Mission: A New Field of Inquiry</h2>
-
-<p>This framework's primary purpose is to demonstrate that the <strong>physics of telic systems</strong> is a <strong>tractable, neglected, and existentially important domain</strong> that deserves serious research investment.</p>
-
-<p>The V1.0 of <em>Aliveness</em> is not intended to be the final answer. It is a catalyst designed to bootstrap a new field of inquiry. The ultimate measure of its success will be the degree to which it becomes obsolete, superseded by the superior models and frameworks built by a thriving research community.</p>
-
-<p><strong>Therefore:</strong></p>
-<ul>
-    <li><strong>Critiques that identify failures are contributions.</strong></li>
-    <li><strong>Alternative frameworks that replace this one are the highest contribution.</strong></li>
-</ul>
-
-<p>Whether this specific framework proves correct, serves as a "wrong but generative" catalyst, or is integrated into a broader synthesis matters less than ensuring the domain itself is <strong>no longer neglected</strong>.</p>
-
-<h3>For Researchers & Collaborators</h3>
-
-<p>You can contribute to this mission by:</p>
-<ul>
-    <li>Testing the key claims and predictions against new data</li>
-    <li>Applying the diagnostic tools to novel domains and edge cases</li>
-    <li>Using the falsification protocols in Appendix C to validate or break the model</li>
-    <li><strong>Deriving alternative frameworks from different theoretical foundations</strong></li>
-    <li><strong>Building competing models that supersede this one entirely</strong></li>
-</ul>
-
-<p><strong>My commitment:</strong> Work on this domain until it is no longer neglected—regardless of whether this specific framework survives.</p>
-
-<hr>
-
-<h2>Citation</h2>
-
-<p><strong>Plain text:</strong><br>
-Kunnas, E. (2025). <em>Aliveness: Principles of Telic Systems</em>. https://aliveness.kunnas.com/</p>
-
-<p><strong>BibTeX:</strong></p>
-<pre>@book{kunnas2025aliveness,
-  title={Aliveness: Principles of Telic Systems},
-  author={Kunnas, Elias},
-  year={2025},
-  url={https://aliveness.kunnas.com/}
-}</pre>
+</div>
+</details>
 
 <hr>
 
@@ -483,10 +400,6 @@ LaTeX source files, build scripts, and website code.</p>
 <strong>Contact:</strong> first name at last name dot com<br>
 <strong>Date:</strong> October 2025<br>
 <strong>License:</strong> <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> (Attribution-ShareAlike) — <a href="LICENSE">full text</a></p>
-
-<hr>
-
-<p><em>"The framework is a wager that what you find through deep introspection—the experience of Wonder and the conditions that generate it—is not merely personal, but a pointer to a universal, structurally necessary truth."</em></p>
 
 </body>
 </html>

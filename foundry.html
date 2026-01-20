@@ -9,6 +9,58 @@
     <meta name="keywords" content="burnout, executive dysfunction, relationship conflict, neurotype, ADHD, autism, personal transformation, internal coherence, pSORT, foundry state">
 
     <style>
+        /* CSS Variables - congruent with styles.css */
+        :root {
+            --bg: #fff;
+            --bg-page: #f5f5f5;
+            --text: #333;
+            --text-muted: #666;
+            --text-dim: #555;
+            --text-faint: #999;
+            --border: #ddd;
+            --border-light: #eee;
+            --border-strong: #ccc;
+            --link: #0066cc;
+            --link-hover: #0052a3;
+            --surface: #f5f5f5;
+            --surface-alt: #f9f9f9;
+            --surface-raised: #f0f0f0;
+            --surface-hover: #e0e0e0;
+            --accent: #0066cc;
+            --accent-bg-alt: #f0f8ff;
+            --highlight: #f39c12;
+            --highlight-bg: #fff9e6;
+            --tooltip-bg: #333;
+            --shadow: rgba(0,0,0,0.1);
+            --shadow-strong: rgba(0,0,0,0.15);
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1e1e1e;
+                --bg-page: #1a1a1a;
+                --text: #e0e0e0;
+                --text-muted: #aaa;
+                --text-dim: #bbb;
+                --text-faint: #888;
+                --border: #444;
+                --border-light: #333;
+                --border-strong: #555;
+                --link: #6bb3ff;
+                --link-hover: #8ec5ff;
+                --surface: #2a2a2a;
+                --surface-alt: #252525;
+                --surface-raised: #333;
+                --surface-hover: #3a3a3a;
+                --accent: #6bb3ff;
+                --accent-bg-alt: #1a2a3a;
+                --highlight: #d4a800;
+                --highlight-bg: #3a3520;
+                --tooltip-bg: #444;
+                --shadow: rgba(0,0,0,0.3);
+                --shadow-strong: rgba(0,0,0,0.4);
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -18,8 +70,8 @@
         body {
             font-family: Georgia, serif;
             line-height: 1.7;
-            color: #333;
-            background: #f5f5f5;
+            color: var(--text);
+            background: var(--bg-page);
         }
 
         .container {
@@ -34,7 +86,7 @@
         }
 
         .back-link a {
-            color: #0066cc;
+            color: var(--link);
             text-decoration: none;
         }
 
@@ -43,48 +95,48 @@
         }
 
         header {
-            background: white;
+            background: var(--bg);
             padding: 40px;
             border-radius: 8px;
             margin-bottom: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px var(--shadow);
             text-align: center;
         }
 
         h1 {
             font-size: 36px;
             margin-bottom: 15px;
-            color: #0066cc;
+            color: var(--accent);
         }
 
         .subtitle {
             font-size: 18px;
-            color: #666;
+            color: var(--text-muted);
             font-style: italic;
             margin-bottom: 20px;
         }
 
         .intro {
             font-size: 16px;
-            color: #555;
+            color: var(--text-dim);
             max-width: 700px;
             margin: 0 auto;
         }
 
         /* Scenario Carousel */
         .carousel-section {
-            background: white;
+            background: var(--bg);
             padding: 35px;
             border-radius: 8px;
             margin-bottom: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px var(--shadow);
         }
 
         .carousel-header {
             font-size: 13px;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            color: #999;
+            color: var(--text-faint);
             margin-bottom: 25px;
             text-align: center;
         }
@@ -101,21 +153,21 @@
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
-            color: #0066cc;
+            color: var(--accent);
             text-align: center;
         }
 
         .scenario-opening {
-            background: #f9f9f9;
+            background: var(--surface-alt);
             padding: 20px;
-            border-left: 4px solid #666;
+            border-left: 4px solid var(--text-muted);
             margin-bottom: 20px;
             font-style: italic;
             font-size: 16px;
         }
 
         .scenario-preview {
-            color: #555;
+            color: var(--text-dim);
             margin-bottom: 25px;
             line-height: 1.8;
             font-size: 16px;
@@ -123,7 +175,7 @@
 
         .explore-btn {
             display: block;
-            background: #0066cc;
+            background: var(--accent);
             color: white;
             border: none;
             padding: 14px 28px;
@@ -136,7 +188,7 @@
         }
 
         .explore-btn:hover {
-            background: #0052a3;
+            background: var(--link-hover);
         }
 
         .carousel-controls {
@@ -151,14 +203,14 @@
             width: 12px;
             height: 12px;
             border-radius: 50%;
-            background: #ddd;
+            background: var(--border);
             border: none;
             cursor: pointer;
             transition: all 0.3s;
         }
 
         .carousel-dot.active {
-            background: #0066cc;
+            background: var(--accent);
             transform: scale(1.2);
         }
 
@@ -168,11 +220,11 @@
         }
 
         .dialogue-section {
-            background: white;
+            background: var(--bg);
             padding: 0;
             border-radius: 8px;
             margin-bottom: 25px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px var(--shadow);
             overflow: hidden;
         }
 
@@ -182,24 +234,24 @@
             align-items: center;
             cursor: pointer;
             padding: 25px 30px;
-            background: #f9f9f9;
+            background: var(--surface-alt);
             transition: background 0.2s;
         }
 
         .dialogue-header:hover {
-            background: #f0f0f0;
+            background: var(--surface-raised);
         }
 
         .dialogue-title {
             font-size: 22px;
             font-weight: bold;
-            color: #0066cc;
+            color: var(--accent);
             font-family: Georgia, serif;
         }
 
         .dialogue-toggle {
             font-size: 20px;
-            color: #999;
+            color: var(--text-faint);
             transition: transform 0.3s;
         }
 
@@ -217,9 +269,9 @@
         }
 
         .reset-btn {
-            background: #f0f0f0;
-            color: #666;
-            border: 1px solid #ccc;
+            background: var(--surface-raised);
+            color: var(--text-muted);
+            border: 1px solid var(--border-strong);
             padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
@@ -230,8 +282,8 @@
         }
 
         .reset-btn:hover {
-            background: #e0e0e0;
-            border-color: #999;
+            background: var(--surface-hover);
+            border-color: var(--text-faint);
         }
 
         /* Messages */
@@ -255,15 +307,15 @@
         }
 
         .message-label.user {
-            color: #666;
+            color: var(--text-muted);
         }
 
         .message-label.ai {
-            color: #0066cc;
+            color: var(--accent);
         }
 
         .message-text {
-            background: #f9f9f9;
+            background: var(--surface-alt);
             padding: 22px;
             border-radius: 4px;
             line-height: 1.8;
@@ -287,16 +339,16 @@
         }
 
         .message.user .message-text {
-            border-left: 4px solid #666;
+            border-left: 4px solid var(--text-muted);
         }
 
         .message.ai .message-text {
-            border-left: 4px solid #0066cc;
+            border-left: 4px solid var(--accent);
         }
 
         /* Framework terms */
         .term {
-            background: #fff9e6;
+            background: var(--highlight-bg);
             padding: 2px 6px;
             border-radius: 3px;
             font-weight: bold;
@@ -311,7 +363,7 @@
             bottom: calc(100% + 8px);
             left: 50%;
             transform: translateX(-50%);
-            background: #333;
+            background: var(--tooltip-bg);
             color: white;
             padding: 10px 14px;
             border-radius: 4px;
@@ -333,9 +385,9 @@
         }
 
         .branch-btn {
-            background: white;
-            border: 2px solid #0066cc;
-            color: #0066cc;
+            background: var(--bg);
+            border: 2px solid var(--accent);
+            color: var(--accent);
             padding: 14px 20px;
             border-radius: 4px;
             cursor: pointer;
@@ -346,30 +398,30 @@
         }
 
         .branch-btn:hover {
-            background: #0066cc;
+            background: var(--accent);
             color: white;
             transform: translateX(5px);
         }
 
         /* Terminal message */
         .terminal-message {
-            background: #f0f8ff;
+            background: var(--accent-bg-alt);
             padding: 20px;
             border-radius: 4px;
             margin-top: 25px;
-            border-left: 4px solid #0066cc;
+            border-left: 4px solid var(--accent);
             font-size: 15px;
         }
 
         /* Try yourself CTA */
         .try-yourself {
-            background: #0066cc;
+            background: var(--accent);
             color: white;
             padding: 40px;
             border-radius: 8px;
             margin: 40px 0;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 8px var(--shadow-strong);
         }
 
         .try-yourself h2 {
@@ -385,7 +437,7 @@
 
         .try-yourself-btn {
             background: white;
-            color: #0066cc;
+            color: var(--link);
             border: none;
             padding: 16px 32px;
             border-radius: 4px;
@@ -404,7 +456,7 @@
         .loading {
             text-align: center;
             padding: 60px;
-            color: #999;
+            color: var(--text-faint);
             font-style: italic;
         }
 
@@ -417,9 +469,9 @@
         }
 
         .starter-btn {
-            background: white;
-            border: 2px solid #0066cc;
-            color: #0066cc;
+            background: var(--bg);
+            border: 2px solid var(--accent);
+            color: var(--accent);
             padding: 16px 20px;
             border-radius: 4px;
             cursor: pointer;
@@ -430,22 +482,22 @@
         }
 
         .starter-btn:hover {
-            background: #f0f8ff;
+            background: var(--accent-bg-alt);
             transform: translateX(5px);
         }
 
         .starter-btn.active {
-            background: #0066cc;
+            background: var(--accent);
             color: white;
         }
 
         /* Dialogue tree container */
         .dialogue-tree {
             display: none;
-            background: white;
+            background: var(--bg);
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px var(--shadow);
             margin-bottom: 20px;
         }
 
@@ -470,7 +522,7 @@
         .response-content h4 {
             margin-top: 25px;
             margin-bottom: 12px;
-            color: #0066cc;
+            color: var(--accent);
             font-size: 17px;
         }
 
@@ -489,7 +541,7 @@
         }
 
         .response-content strong {
-            color: #333;
+            color: var(--text);
         }
 
         .response-content em {
@@ -499,10 +551,10 @@
         /* Path indicator */
         .path-indicator {
             font-size: 13px;
-            color: #999;
+            color: var(--text-faint);
             margin-bottom: 20px;
             padding-bottom: 15px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-light);
         }
 
         .path-indicator span {
@@ -511,15 +563,15 @@
 
         /* How it works */
         .how-it-works {
-            background: white;
+            background: var(--bg);
             padding: 35px;
             border-radius: 8px;
             margin-bottom: 40px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 8px var(--shadow);
         }
 
         .how-it-works h3 {
-            color: #0066cc;
+            color: var(--accent);
             margin-bottom: 20px;
             font-size: 24px;
         }
@@ -539,7 +591,7 @@
         }
 
         .how-it-works a {
-            color: #0066cc;
+            color: var(--link);
             text-decoration: none;
         }
 
@@ -558,7 +610,7 @@
             <h1>The Foundry</h1>
             <p class="subtitle">Ask AI about your life. Get answers that actually work.</p>
             <p class="intro">
-                This is a free prompt you paste into AI (like <a href="https://aistudio.google.com/" target="_blank" style="color: #0066cc;">Google AI Studio</a>). It loads the full 820-page Aliveness book as context. Then you ask about burnout, relationships, decisions, meaning—and it applies the same unified framework that explains civilizational collapse to your specific situation. See the sample dialogues below.
+                This is a free prompt you paste into AI (like <a href="https://aistudio.google.com/" target="_blank" style="color: var(--link);">Google AI Studio</a>). It loads the full 820-page Aliveness book as context. Then you ask about burnout, relationships, decisions, meaning—and it applies the same unified framework that explains civilizational collapse to your specific situation. See the sample dialogues below.
             </p>
         </header>
 
@@ -566,7 +618,7 @@
         <div class="dialogue-trees-section">
             <div id="dialogue-trees">
                 <h3 style="margin-top: 0; margin-bottom: 10px;">Sample Conversations</h3>
-                <p style="margin-bottom: 20px; color: #666;">Click a question to see how The Foundry reveals the hidden architecture, then explore follow-up branches.</p>
+                <p style="margin-bottom: 20px; color: var(--text-muted);">Click a question to see how The Foundry reveals the hidden architecture, then explore follow-up branches.</p>
 <!-- Generated Dialogue Trees -->
 <div class="starter-questions">
     <button class="starter-btn" onclick="showTree('victory-trap')">I achieved everything but feel empty. What's wrong with me?</button>
@@ -1255,7 +1307,7 @@
 <li><em>Part C:</em> "We are lazy for not exercising."</li>
 <li><strong>The Drain:</strong> You are leaking energy into internal friction. By the time you sit down to work, you have negotiated ten peace treaties between warring parts of your psyche.</li>
 </ul>
-<hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
+<hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border-light);">
 <h4>The Diagnostic Protocol</h4>
 <p>To fix this, we must locate the leak. Tomorrow morning, run this trace:</p>
 <p><strong>1. The Hardware Check (Rule this out first)</strong></p>
@@ -1391,7 +1443,7 @@
 <li><strong>The Cost:</strong> Your metamorphic energy has nowhere to go, so it turns inward and eats you (anxiety/restlessness).</li>
 <li><strong>The Signal:</strong> You feel trapped, restless, and wonder "Is this it?"</li>
 </ul>
-<hr style="margin: 20px 0; border: none; border-top: 1px solid #eee;">
+<hr style="margin: 20px 0; border: none; border-top: 1px solid var(--border-light);">
 <h4>The Next Experiment: The "Deadly Component" Analysis</h4>
 <p>Tomorrow, when you think about work and the exhaustion hits, I want you to zoom in. Don't just look at the label "Work." Look at the <strong>specific scene</strong> your brain is simulating.</p>
 <p><strong>What is the exact image that makes you tired?</strong></p>
@@ -2080,9 +2132,9 @@ A telic system that maintains its own internal order by consuming a higher-order
             <h2>Try It Yourself</h2>
             <p style="margin-bottom: 20px;">The dialogues above are samples. You can run your own—it's free. Paste the prompt into AI, ask your question, see if it's useful for your situation.</p>
 
-            <details style="margin-bottom: 20px; padding: 15px; background: #f0f8ff; border-left: 4px solid #0066cc;">
-                <summary style="cursor: pointer; font-weight: bold; font-size: 16px; color: #0066cc;">Example questions you can ask:</summary>
-                <ul style="margin-top: 15px; margin-left: 20px; line-height: 1.8; color: #333;">
+            <details style="margin-bottom: 20px; padding: 15px; background: var(--accent-bg-alt); border-left: 4px solid var(--accent);">
+                <summary style="cursor: pointer; font-weight: bold; font-size: 16px; color: var(--accent);">Example questions you can ask:</summary>
+                <ul style="margin-top: 15px; margin-left: 20px; line-height: 1.8; color: var(--text);">
                     <li>"I'm exhausted all the time despite sleeping 8 hours. How do I get energy for my deadline?"</li>
                     <li>"I achieved everything I set out to do but feel nothing. What's wrong with me?"</li>
                     <li>"My partner and I keep having the same fight. They try to solve when I need to vent."</li>
@@ -2096,29 +2148,29 @@ A telic system that maintains its own internal order by consuming a higher-order
 
             <button class="try-yourself-btn" onclick="toggleFoundryInstructions()" id="foundry-toggle">Show How to Use It →</button>
 
-            <div id="foundry-instructions" style="display: none; margin-top: 25px; padding: 25px; background: white; border-radius: 4px; border: 1px solid #ddd; color: #333;">
-                <h4 style="margin-top: 0; margin-bottom: 15px; color: #0066cc;">How to Use The Foundry</h4>
+            <div id="foundry-instructions" style="display: none; margin-top: 25px; padding: 25px; background: var(--bg); border-radius: 4px; border: 1px solid var(--border); color: var(--text);">
+                <h4 style="margin-top: 0; margin-bottom: 15px; color: var(--accent);">How to Use The Foundry</h4>
 
-                <div style="background: #fff3cd; padding: 15px; margin-bottom: 20px; border-left: 4px solid #f39c12; color: #333;">
+                <div style="background: var(--highlight-bg); padding: 15px; margin-bottom: 20px; border-left: 4px solid var(--highlight); color: var(--text);">
                     <strong>This is NOT software to install or run.</strong> It's instructions you paste into an AI chat (like Google AI Studio). You're teaching the AI the framework so it can reveal your hidden architecture and forge protocols for your specific situation.
                 </div>
 
-                <div style="background-color: #f0f8ff; padding: 20px; margin-bottom: 20px; border-left: 4px solid #0066cc;">
-                    <strong style="font-size: 16px; color: #0066cc;">🏆 Easiest Method: One-Click Copy</strong><br>
-                    <p style="margin: 10px 0; color: #333;">Open <a href="https://aistudio.google.com/" target="_blank" style="color: #0066cc;">Google AI Studio</a> (free, 1M+ context), start a new chat, then:</p>
+                <div style="background-color: var(--accent-bg-alt); padding: 20px; margin-bottom: 20px; border-left: 4px solid var(--accent);">
+                    <strong style="font-size: 16px; color: var(--accent);">🏆 Easiest Method: One-Click Copy</strong><br>
+                    <p style="margin: 10px 0; color: var(--text);">Open <a href="https://aistudio.google.com/" target="_blank" style="color: var(--link);">Google AI Studio</a> (free, 1M+ context), start a new chat, then:</p>
 
                     <button class="action-button" onclick="copyFullFoundryPrompt()" style="margin-top: 8px; font-size: 16px; padding: 12px 24px;">Copy Combined Prompt</button>
                     <span id="copy-status-foundry-full" class="copy-status" style="font-family: sans-serif; font-size: 14px; color: green; display: inline-block; opacity: 0; transition: opacity 0.1s ease-in-out; margin-left: 10px;">Copied!</span>
 
-                    <p style="margin-top: 15px; color: #333; line-height: 1.6;">
+                    <p style="margin-top: 15px; color: var(--text); line-height: 1.6;">
                         Paste into AI Studio and send. Done.<br>
-                        <small style="color: #666;"><em>Downloads and combines bootstrap + foundry prompt + full book (~1.2MB)<br>⚠️ Only works in <a href="https://aistudio.google.com/" target="_blank" style="color: #0066cc;">aistudio.google.com</a> — NOT gemini.google.com or mobile app</em></small>
+                        <small style="color: var(--text-muted);"><em>Downloads and combines bootstrap + foundry prompt + full book (~1.2MB)<br>⚠️ Only works in <a href="https://aistudio.google.com/" target="_blank" style="color: var(--link);">aistudio.google.com</a> — NOT gemini.google.com or mobile app</em></small>
                     </p>
                 </div>
 
                 <details style="margin-bottom: 20px;">
-                    <summary style="cursor: pointer; color: #666; font-weight: bold; padding: 10px; background: #f5f5f5; border-radius: 4px;">Alternative: Upload files to chat (if one-click doesn't work)</summary>
-                    <div style="padding: 15px; color: #333; line-height: 1.6;">
+                    <summary style="cursor: pointer; color: var(--text-muted); font-weight: bold; padding: 10px; background: var(--surface); border-radius: 4px;">Alternative: Upload files to chat (if one-click doesn't work)</summary>
+                    <div style="padding: 15px; color: var(--text); line-height: 1.6;">
                         <p style="margin-bottom: 15px;"><strong>Step 1: Download the materials</strong></p>
                         <button class="action-button" onclick="downloadFile('https://aliveness.kunnas.com/foundry.txt', 'Aliveness__foundry_prompt.txt')">Download Foundry Prompt (TXT)</button>
                         <button class="action-button" onclick="downloadFile('https://aliveness.kunnas.com/Aliveness__Principles_of_Telic_Systems.txt', 'Aliveness__Principles_of_Telic_Systems.txt')">Download Full Book (TXT)</button>
@@ -2127,29 +2179,34 @@ A telic system that maintains its own internal order by consuming a higher-order
                         <p style="margin-bottom: 10px;">Works with: <a href="https://aistudio.google.com/" target="_blank">Google AI Studio</a>, Claude, OpenRouter, etc.</p>
 
                         <ol style="margin-left: 20px; line-height: 1.8;">
-                            <li>Start chat with: <code style="background: #e8e8e8; padding: 2px 6px; border-radius: 3px; user-select: all;">Please apply the full constitutional prompt below. Then, follow its BOOTSTRAP SEQUENCE for your first response.</code></li>
+                            <li>Start chat with: <code style="background: var(--surface); padding: 2px 6px; border-radius: 3px; user-select: all;">Please apply the full constitutional prompt below. Then, follow its BOOTSTRAP SEQUENCE for your first response.</code></li>
                             <li>Upload both downloaded TXT files (foundry prompt first, then book)</li>
                             <li>Send the message</li>
                         </ol>
                     </div>
                 </details>
 
-                <p style="padding: 15px; background: #fff9e6; border-left: 4px solid #f39c12; color: #333; margin: 0;">
+                <p style="padding: 15px; background: var(--highlight-bg); border-left: 4px solid var(--highlight); color: var(--text); margin: 0;">
                     <strong>What happens:</strong> The AI applies the framework from the book to whatever you ask. It treats problems as engineering puzzles—what's the actual mechanism, what's the structural fix—rather than offering reassurance or generic advice.
                 </p>
 
-                <p style="margin-top: 15px; font-size: 14px; color: #666;"><strong>Privacy note:</strong> Free AI Studio may use your data for training. If that matters: enable billing (you can still use free quota) or use API access for full privacy. For personal exploration, the tradeoff is usually fine — but don't paste passwords, financial details, or anything legally sensitive.</p>
+                <p style="margin-top: 15px; font-size: 14px; color: var(--text-muted);"><strong>Privacy note:</strong> Free AI Studio may use your data for training. If that matters: enable billing (you can still use free quota) or use API access for full privacy. For personal exploration, the tradeoff is usually fine — but don't paste passwords, financial details, or anything legally sensitive.</p>
             </div>
         </div>
 
         <style>
             .foundry-widget {
-                background: #0066cc;
+                background: var(--accent);
                 color: white;
                 padding: 40px;
                 border-radius: 8px;
                 margin: 40px 0;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                box-shadow: 0 2px 8px var(--shadow-strong);
+            }
+            @media (prefers-color-scheme: dark) {
+                .foundry-widget {
+                    background: #1a3a5a;
+                }
             }
             .foundry-widget h2 {
                 margin-top: 0;
@@ -2157,17 +2214,29 @@ A telic system that maintains its own internal order by consuming a higher-order
                 font-size: 28px;
                 color: white;
             }
+            .foundry-widget details {
+                background: rgba(255,255,255,0.95);
+                border-radius: 4px;
+            }
             .foundry-widget details summary {
-                color: #003d7a;
+                color: var(--text);
+                padding: 10px 15px;
             }
             .foundry-widget details li {
-                color: #003d7a;
+                color: var(--text);
+            }
+            .foundry-widget p {
+                color: rgba(255,255,255,0.95);
+            }
+            .foundry-widget a {
+                color: white;
+                text-decoration: underline;
             }
             .action-button {
                 display: inline-block;
                 padding: 10px 18px;
-                background-color: #0066cc;
-                color: #fff;
+                background-color: white;
+                color: var(--link);
                 border: none;
                 cursor: pointer;
                 font-size: 14px;
@@ -2176,9 +2245,11 @@ A telic system that maintains its own internal order by consuming a higher-order
                 margin-right: 10px;
                 margin-bottom: 10px;
                 text-decoration: none;
+                font-weight: bold;
             }
             .action-button:hover {
-                background-color: #004c99;
+                background-color: var(--surface);
+                color: var(--link);
             }
         </style>
 
@@ -2376,7 +2447,7 @@ ${book}`;
         <div class="how-it-works" id="setup-instructions">
             <h3>Why This Works</h3>
 
-            <p style="background: #f0f8ff; padding: 15px; margin-bottom: 20px; border-left: 4px solid #0066cc;">
+            <p style="background: var(--accent-bg-alt); padding: 15px; margin-bottom: 20px; border-left: 4px solid var(--accent);">
                 <strong>Want to try it?</strong> <a href="#foundry-widget">See "Try It Yourself" above</a> for setup instructions.
             </p>
 
