@@ -55,6 +55,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://aliveness.kunnas.com/articles/complexity-laundering</loc>
+    <lastmod>2026-01-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://aliveness.kunnas.com/articles/copenhagen-trap</loc>
     <lastmod>2025-12-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -105,6 +111,12 @@
   <url>
     <loc>https://aliveness.kunnas.com/articles/glitch-in-jante</loc>
     <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aliveness.kunnas.com/articles/governance-alignment-problem</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -321,6 +333,12 @@
   <url>
     <loc>https://aliveness.kunnas.com/articles/why-no-one-is-colonizing-space</loc>
     <lastmod>2025-12-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://aliveness.kunnas.com/articles/when-does-reform-happen</loc>
+    <lastmod>2026-01-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
